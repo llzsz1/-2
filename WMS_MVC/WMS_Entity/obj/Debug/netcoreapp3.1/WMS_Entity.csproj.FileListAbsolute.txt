@@ -14,11 +14,4 @@ D:\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.AssemblyIn
 D:\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.AssemblyInfo.cs
 D:\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.dll
 D:\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.pdb
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\bin\Debug\netcoreapp3.1\WMS_Entity.deps.json
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\bin\Debug\netcoreapp3.1\WMS_Entity.dll
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\bin\Debug\netcoreapp3.1\WMS_Entity.pdb
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.csproj.CoreCompileInputs.cache
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.AssemblyInfoInputs.cache
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.AssemblyInfo.cs
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.dll
-C:\Users\DELL\Desktop\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.pdb
+D:\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.csprojAssemblyReference.cache

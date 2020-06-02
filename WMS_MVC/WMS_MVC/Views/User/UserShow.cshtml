@@ -1,0 +1,141 @@
+﻿
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>用户编号</th>
+            <th>用户名</th>
+            <th>用户昵称</th>
+            <th>邮箱</th>
+            <th>电话</th>
+            <th>性别</th>
+            <th>部门</th>
+            <th>是否禁用</th>
+            <th>创建时间</th>
+            <th>修改时间</th>
+            <th>角色</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="tb">
+    </tbody>
+</table>
+
+<table class="table">
+    <tr>
+        <td style="text-align: center; vertical-align: middle; color: #ff006e; font-family: STXingkai; font-weight: bolder; font-size: larger">总记录数<span id="TotalCount"></span>条</td>
+        <td style="text-align: center; vertical-align: middle; color: #ff006e; font-family: STXingkai; font-weight: bolder; font-size: larger">总共<span id="TotalPage"></span>页</td>
+        <td style="text-align: center; vertical-align: middle; color: #ff006e; font-family: STXingkai; font-weight: bolder; font-size: larger">当前第<span id="CurrentPage"></span>页</td>
+        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+            <input id="Button1" type="button" value="首页" onclick="Show(1)" class="btn btn-primary" />
+        </td>
+        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+            <input type="button" value="◀" onclick="Show(currentPage - 1)" class="btn btn-primary" />
+        </td>
+        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+            <input type="button" value="▶" onclick="Show(currentPage + 1)" class="btn btn-primary" />
+        </td>
+        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+            <input type="button" value="尾页" onclick="Show(totalPage)" class="btn btn-primary" />
+        </td>
+    </tr>
+</table>
+
+@section scripts{
+
+    <script>
+        var pageSize = 5;
+        var currentPage = 1;
+        var totalPage = 1;
+
+        $(function () {
+            Show(1);
+        })
+
+        function Show(page) {
+
+            var obj = {};
+            obj.currentPage = page;
+            obj.pageSize = pageSize;
+
+            $.ajax({
+                url: 'http://localhost:63209/api/User/Get',
+                type: 'get',
+                dataType: 'json',
+                data: obj,
+                success: function (d) {
+
+                    $("#TotalCount").text(d.totalCount)
+                    $("#TotalPage").text(d.totalPage)
+                    $("#CurrentPage").text(d.currentPage)
+                    //最大页
+                    totalPage = d.totalPage;
+                    //当前页
+                    currentPage = d.currentPage;
+
+                    $("#tb").empty();
+                    $(d.users).each(function () {
+                        var line = '<tr>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.userId + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.userName + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.userNickname + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.email + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.tel + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.sex == true ? "男" : "女") + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.deptName + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.isOK == true ? "启用" : "禁用") + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.createDate + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.modifiedDate + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.roleName + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-danger' onclick=UptUser(" + this.userId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptUser1(" + this.userId + ") />")
+                            
+                            + '</td>'
+                            + '</tr>';
+                        $("#tb").append(line);
+                    })
+                }
+
+
+            })
+        }
+
+        //修改状态（是否启用）
+        function UptUser(id) {
+            $.ajax({
+                url: 'http://localhost:63209/api/User/PutUser/' + id,
+                type: 'put',
+                dataType: 'json',
+                data: JSON.stringify({ UserId: id }),
+                contentType: "application/json",
+                success: function (d) {
+                    if (d > 0) {
+                        Show();
+                    }
+                    else {
+                        alert('操作失败！');
+                    }
+                }
+            })
+        }
+        function UptUser1(id) {
+            $.ajax({
+                url: 'http://localhost:63209/api/User/PutUser1/' + id,
+                type: 'put',
+                dataType: 'json',
+                data: JSON.stringify({ UserId: id }),
+                contentType: "application/json",
+                success: function (d) {
+                    if (d > 0) {
+                        Show();
+                    }
+                    else {
+                        alert('操作失败！');
+                    }
+                }
+            })
+        }
+    </script>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+}
