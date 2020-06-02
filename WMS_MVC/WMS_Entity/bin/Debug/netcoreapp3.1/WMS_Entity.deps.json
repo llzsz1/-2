@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WMS_Entity/1.0.0": {
+        "runtime": {
+          "WMS_Entity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WMS_Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

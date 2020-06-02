@@ -1,24 +1,91 @@
 {
   "format": 1,
   "restore": {
-    "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {}
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {}
   },
   "projects": {
-    "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
-        "projectName": "WMS_MVC",
-        "projectPath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
-        "packagesPath": "C:\\Users\\吕静\\.nuget\\packages\\",
-        "outputPath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\obj\\",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "projectName": "WMS_DAL",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\吕静\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "projectName": "WMS_Entity",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -53,6 +120,84 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+        "projectName": "WMS_MVC",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
+              },
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
@@ -60,7 +205,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
