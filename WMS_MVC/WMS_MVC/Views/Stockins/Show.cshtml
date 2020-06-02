@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h2>Show</h2>
+<table class="table table-hover">
+    <tr>
+        <td>日期范围</td>
+        <td><input id="Texttime1" type="text" /></td>
+        <td><input id="Textrime2" type="text" /></td>
+        <td>
+            <select id="Select1">
+                <option value="">全部类型</option>
+                <option value="采购入库">采购入库</option>
+                <option value="外协入库">外协入库</option>
+            </select>
+        </td>
+        <td>
+            <select id="Select2">
+                <option value=0>全部状态</option>
+                <option value=1>待审核</option>
+                <option value=2>审核未通过</option>
+                <option value=3>审核通过</option>
+                <option value=4>审核中</option>
+                <option value=5>已发货</option>
+            </select>
+        </td>
+        <td><input id="Button1" type="button" value="查询" class="btn btn-info" onclick="Show(1)" /></td>
+    </tr>
+</table>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>操作</td>
+            <td>入库单号</td>
+            <td>订单号</td>
+            <td>入库类型</td>
+            <td>供应商编号</td>
+            <td>供应商名称</td>
+            <td>状态</td>
+            <td>备注</td>
+            <td>创建人</td>
+            <td>创建时间</td>
+            <td>修改人</td>
+            <td>修改时间</td>
+        </tr>
+    </thead>
+    <tbody id="tb"></tbody>
+</table>
+<table class=" table-hover table">
+    <tr>
+        <td>总记录数<span id="TotalCount"></span>条</td>
+        <td>总共<span id="TotalPage"></span>页</td>
+        <td>当前第<span id="CurrentPage"></span>页</td>
+        <td><a href="javascript:;" onclick="Show(1)">首页</a></td>
+        <td><a href="javascript:;" onclick="Show(currentPage-1)">上一页</a></td>
+        <td><a href="javascript:;" onclick="Show(currentPage+1)">下一页</a></td>
+        <td><a href="javascript:;" onclick="Show(totalPage)">尾页</a></td>
+
+    </tr>
+</table>
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            Show(1);
+        })
+        //显示
+        function Show(page) {
+            $.ajax({
+                url: "http://localhost:63209/api/Stockins/Gets",
+                type: "Get",
+                data:{ time1: $("#Texttime1").val(), time2: $("#Textrime2").val(), type: $("#Select1").val(), state: $("#Select2").val(), CurrentPage: page, },
+                contentType: "application/json",
+                success: function (d) {
+                    $("#TotalCount").text(d.totalCount)
+                    $("#TotalPage").text(d.totalPage)
+                    $("#CurrentPage").text(d.currentPage)
+                    //最大页
+                    totalPage = d.totalPage;
+                    //当前页
+                    currentPage = d.currentPage;
+                    //清空表格
+                    $("#tb").empty();
+                    //循环遍历
+                    $(d.stockins).each(function () {
+                        //拼接tr一行
+                        var line = '<tr>'
+                            + '<td>' + '<a href=javascript:;>添加明细</a>' + '    ' + '<a href=javascript:;>审核</a>' + '</td>'
+                            + '<td>' + this.stockInId + '</td>'
+                            + '<td>' + this.orderNo + '</td>'
+                            + '<td>' + this.stockInType + '</td>'
+                            + '<td>' + this.supplierId + '</td>'
+                            + '<td>' + this.supplierName + '</td>'
+                            + '<td>' + this.stockInStatus + '</td>'
+                            + '<td>' + this.remark + '</td>'
+                            + '<td>' + this.createBy + '</td>'
+                            + '<td>' + this.createDate + '</td>'
+                            + '<td>' + this.modifiedBy + '</td>'
+                            + '<td>' + this.modifiedDate + '</td>'
+                            + '</tr>'
+                        //将数据放入表格
+                        $("#tb").append(line);
+                    });
+                }
+            });
+        }
+    </script>
+}

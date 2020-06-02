@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using WMS_MVC.Code;
 using WMS_Entity;
 using WMS_DAL;
+using Newtonsoft.Json;
 
 
 namespace WMS_MVC.Controllers
