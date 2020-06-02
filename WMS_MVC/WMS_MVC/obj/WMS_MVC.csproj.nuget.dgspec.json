@@ -174,10 +174,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "IKVM": {
-              "target": "Package",
-              "version": "[8.1.5717, )"
-            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.3, )"
