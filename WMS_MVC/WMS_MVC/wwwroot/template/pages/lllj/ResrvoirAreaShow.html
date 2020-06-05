@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../images/favicon.png" />
+
+
 </head>
 
 <body>
@@ -231,12 +233,12 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">仓库库区货架管理</span>
+                            <span class="menu-title">仓库管理</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/ReservoirareaPage.html">仓库管理</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/ResrvoirAreaShow.html">仓库管理</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/StoragerackPage.html">货架管理</a></li>
                             </ul>
@@ -247,8 +249,45 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
+                    <table class="table table-bordered table-borderless">
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal">新增库区</button>
+                                <input id="Button1" type="button" value="批量删除" class="btn btn-danger" onclick="delAll()" />
+                            </td>
+                            <td>
+                                所属仓库：
+                                <select id="Select1">
+                                    <option value="0">===请选择===</option>
+                                    <option value="1">山东1号</option>
+                                    <option value="2">河南1号</option>
+                                    <option value="3">山西1号</option>
+                                    <option value="4">上海1号</option>
+                                    <option value="5">山1号</option>
 
-
+                                </select>
+                            </td>
+                            <td>库区名称：<input id="name" type="text" /></td>
+                            <td><input id="Button1" type="button" value="查询" onclick="show(1)" class="btn btn-success" /></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered  table table-borderless">
+                        <thead>
+                            <tr style="background-color:pink">
+                                <th><input class="top" type="checkbox" onclick="allSelect()" />全选/反选</th>
+                                <th>操作</th>
+                                <th>库区编号</th>
+                                <th>库区名称</th>
+                                <th>所属仓库</th>
+                                <th>备注</th>
+                                <th>创建者</th>
+                                <th>创建时间</th>
+                                <th>修改者</th>
+                                <th>修改时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tb"></tbody>
+                    </table>
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
@@ -273,6 +312,72 @@
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
     <!-- endinject -->
+
+    <script>
+        $(function () {
+            show(1);
+        })
+
+        var pageSize = 5;
+        var currentPage = 1;
+        var totalPage = 1;
+
+        function show(index) {
+            var obj = {};
+            obj.warehouseId = $("#Select1").val();
+            obj.reservoirAreaName = $("#name").val();
+            obj.currentPage = page;
+            obj.pageSize = pageSize;
+
+            $.ajax({
+                url: 'http://localhost:63209/api/Reservoirarea/ShowReservoirarea/',
+                type: 'get',
+                dataType: 'json',
+                data: JSON.stringify(obj),
+                success: function (d) {
+                    $("#TotalCount").text(d.totalCount);
+                    $("#TotalPage").text(d.totalPage);
+                    $("#CurrentPage").text(d.currentPage);
+                    //最大页
+                    totalPage = d.totalPage;
+                    //当前页
+                    currentPage = d.currentPage;
+                    $("#tb").empty();
+                    $(d.reservoirareas).each(function () {
+
+                        var line = '<tr>'
+                            + '<td><input class="ckEmp" type="checkbox" value="' + this.reservoirAreaId + '" /></td>'
+                            + '<td><button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
+                            + '<td>' + this.reservoirAreaId + '</td>'
+                            + '<td>' + this.reservoirAreaName + '</td>'
+                            + '<td>' + this.warehouseName + '</td>'
+                            + '<td>' + this.remark + '</td>'
+                            + '<td>' + this.userNickname + '</td>'
+                            + '<td>' + this.createDate + '</td>'
+                            + '<td>' + this.userNickname2 + '</td>'
+                            + '<td>' + this.modifiedDate + '</td>'
+                            + '</tr>';
+                        $("#td").append(line);
+                    })
+                }
+
+            })
+        }
+        //全选和反选
+        function allSelect() {
+            if ($(".top").prop("checked")) {
+                $(".ckEmp").prop("checked", true);
+            }
+            else {
+                $(".ckEmp").each(function () {
+                    this.checked = !this.checked;
+                })
+            }
+        }
+    </script>
+
+    
+
 </body>
 
 </html>
