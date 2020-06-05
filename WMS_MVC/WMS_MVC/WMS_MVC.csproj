@@ -5,29 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\My97DatePicker\calendar.js" />
-    <None Include="wwwroot\My97DatePicker\lang\en.js" />
-    <None Include="wwwroot\My97DatePicker\lang\zh-cn.js" />
-    <None Include="wwwroot\My97DatePicker\lang\zh-tw.js" />
-    <None Include="wwwroot\My97DatePicker\skin\datePicker.gif" />
-    <None Include="wwwroot\My97DatePicker\skin\default\datepicker.css" />
-    <None Include="wwwroot\My97DatePicker\skin\default\img.gif" />
-    <None Include="wwwroot\My97DatePicker\skin\WdatePicker.css" />
-    <None Include="wwwroot\My97DatePicker\skin\whyGreen\bg.jpg" />
-    <None Include="wwwroot\My97DatePicker\skin\whyGreen\datepicker.css" />
-    <None Include="wwwroot\My97DatePicker\skin\whyGreen\img.gif" />
-    <None Include="wwwroot\My97DatePicker\WdatePicker.js" />
-    <None Include="wwwroot\My97DatePicker\开发包\lang\en.js" />
-    <None Include="wwwroot\My97DatePicker\开发包\lang\zh-cn.js" />
-    <None Include="wwwroot\My97DatePicker\开发包\lang\zh-tw.js" />
-    <None Include="wwwroot\My97DatePicker\开发包\readme.txt" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\datePicker.gif" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\default\datepicker.css" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\default\img.gif" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\WdatePicker.css" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
-    <None Include="wwwroot\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <None Include="wwwroot\template\.DS_Store" />
     <None Include="wwwroot\template\css\maps\style.css.map" />
     <None Include="wwwroot\template\css\style.css" />
