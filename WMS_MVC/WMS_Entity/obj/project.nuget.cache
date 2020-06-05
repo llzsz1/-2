@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L3d4SEh+ePa6Ni7riHLSBKQ9pa8eopcDK+wOU3GhWakX63Pu63eBNkAXOvh8Ih3WySq//RcuNsjqBf1wDfbNyQ==",
+  "dgSpecHash": "kWX/W9NMKgu7pRzssnKDmpNwCtaP0LBjAFxz+e8SQJw+V+abfiHoPUKI4I0dVed6/Cg1FYLraYU/91IWNDpcUQ==",
   "success": true,
-  "projectFilePath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+  "projectFilePath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
