@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\WMS_MVC - 副本\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
       "projectName": "WMS_Entity",
-      "projectPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC - 副本\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC - 副本\\WMS_MVC\\WMS_Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -72,7 +72,7 @@
             $.ajax({
                 url: "http://localhost:63209/api/Stockins/Gets",
                 type: "Get",
-                data:{ time1: $("#Texttime1").val(), time2: $("#Textrime2").val(), type: $("#Select1").val(), state: $("#Select2").val(), CurrentPage: page, },
+                data: { time1: $("#Texttime1").val(), time2: $("#Textrime2").val(), type: $("#Select1").val(), state: $("#Select2").val(), CurrentPage: page, },
                 contentType: "application/json",
                 success: function (d) {
                     $("#TotalCount").text(d.totalCount)
@@ -88,7 +88,7 @@
                     $(d.stockins).each(function () {
                         //拼接tr一行
                         var line = '<tr>'
-                            + '<td>' + '<a href=javascript:;>添加明细</a>' + '    ' + '<a href=javascript:;>审核</a>' + '</td>'
+                            + '<td>' + '<a href=javascript:;>添加明细</a>' + '    ' + '<a href=javascript:; onclick="Shenhe(' + this.stockInId + ')">审核</a>' + '</td>'
                             + '<td>' + this.stockInId + '</td>'
                             + '<td>' + this.orderNo + '</td>'
                             + '<td>' + this.stockInType + '</td>'
@@ -107,5 +107,28 @@
                 }
             });
         }
+        //审核入库
+        function Shenhe(id) {
+            var obj = {};
+            obj.id = parseInt(id);
+            obj.name = "张三";
+            $.ajax({
+                url: 'http://localhost:63209/api/RuKu/Puts',
+                type: 'Post',
+                data: JSON.stringify(obj),
+                contentType: "application/json",
+                crossDomain: true,
+                success: function (d) {
+                    if (d > 1) {
+                        alert("审核成功");
+                    }
+                    else {
+                        alert("没有明细不能审核");
+                    }
+                }
+
+            })
+        }
     </script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
 }
