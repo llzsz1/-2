@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\template\pages\Carrier\.DS_Store" />
+    <Content Remove="wwwroot\template\pages\Carrier\Carrier.html" />
+    <Content Remove="wwwroot\template\pages\Carrier\Customer.html" />
+    <Content Remove="wwwroot\template\pages\Carrier\Supplier.html" />
+    <Content Remove="wwwroot\template\pages\Carrier\typography.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\template\.DS_Store" />
     <None Include="wwwroot\template\css\maps\style.css.map" />
     <None Include="wwwroot\template\css\style.css" />
@@ -83,6 +91,11 @@
     <None Include="wwwroot\template\js\off-canvas.js" />
     <None Include="wwwroot\template\js\tabs.js" />
     <None Include="wwwroot\template\js\template.js" />
+    <None Include="wwwroot\template\pages\Carrier\.DS_Store" />
+    <None Include="wwwroot\template\pages\Carrier\Carrier.html" />
+    <None Include="wwwroot\template\pages\Carrier\Customer.html" />
+    <None Include="wwwroot\template\pages\Carrier\Supplier.html" />
+    <None Include="wwwroot\template\pages\Carrier\typography.html" />
     <None Include="wwwroot\template\pages\charts\.DS_Store" />
     <None Include="wwwroot\template\pages\charts\chartjs.html" />
     <None Include="wwwroot\template\pages\forms\basic_elements.html" />
@@ -164,6 +177,10 @@
   <ItemGroup>
     <ProjectReference Include="..\WMS_DAL\WMS_DAL.csproj" />
     <ProjectReference Include="..\WMS_Entity\WMS_Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\template\pages\222z\" />
   </ItemGroup>
 
 

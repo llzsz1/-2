@@ -26,7 +26,6 @@ L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_Entity\obj\Debug\net
 C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\bin\Debug\netcoreapp3.1\WMS_Entity.deps.json
 C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\bin\Debug\netcoreapp3.1\WMS_Entity.dll
 C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\bin\Debug\netcoreapp3.1\WMS_Entity.pdb
-C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.csprojAssemblyReference.cache
 C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.AssemblyInfoInputs.cache
 C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.AssemblyInfo.cs
