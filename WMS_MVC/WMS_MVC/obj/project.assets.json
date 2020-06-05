@@ -3038,7 +3038,6 @@
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
@@ -6560,24 +6559,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a1761\\.nuget\\packages\\": {},
+    "C:\\Users\\吕静\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+      "projectUniqueName": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
       "projectName": "WMS_MVC",
-      "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
-      "packagesPath": "C:\\Users\\a1761\\.nuget\\packages\\",
-      "outputPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\obj\\",
+      "projectPath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+      "packagesPath": "C:\\Users\\吕静\\.nuget\\packages\\",
+      "outputPath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_MVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\a1761\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\吕静\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6589,11 +6591,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
-              "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
+            "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+              "projectPath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
             },
-            "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
-              "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+            "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+              "projectPath": "L:\\实训二\\仓库管理系统项目---4组mvc\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
             }
           }
         }
@@ -6638,7 +6640,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add</h2>
+
+<table class="table table-hover">
+    <tr>
+        <td>计划数量</td>
+        <td><input id="Text1" type="text" /></td>
+    </tr>
+    <tr>
+        <td>实际数量</td>
+        <td><input id="Text2" type="text" /></td>
+    </tr>
+    <tr>
+        <td>货架</td>
+        <td>
+            <select id="Select1">
+                <option value="1">德玛西亚</option>
+                <option value="2">啥也不是</option>
+                <option value="3">啦啦啦啦</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>备注</td>
+        <td><textarea id="TextArea1" rows="2" cols="20"></textarea></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input id="Button1" type="button" value="确认" onclick="Add()" /></td>
+    </tr>
+</table>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@section scripts{
+    <script>
+        function Add() {
+            var obj = {};
+            obj.planInQty = parseInt($("#Text1").val());
+            obj.actInQty = parseInt($("#Text2").val());
+            obj.storagerackId = parseInt($("#Select1").val());
+            obj.remark = $("#TextArea1").val();
+            $.ajax({
+                url: 'http://localhost:63209/api/Stockindetails/Post',
+                type: 'Post',
+                data: JSON.stringify(obj),
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (d) {
+                    if (d > 0) {
+                        alert('添加成功');
+                        location.href = '/Stockindetails/Show';
+                    }
+                }
+            })
+        }
+    </script>
+}
