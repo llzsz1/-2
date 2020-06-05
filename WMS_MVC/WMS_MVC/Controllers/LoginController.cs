@@ -106,22 +106,40 @@ namespace WMS_MVC.Controllers
         [HttpPost]
         public IActionResult Login(UserInfo u)
         {
+            var list = LoginData.Login(u);
             var (_bool, msg) = VerifyValiate();
             if (!_bool)
             {
                 return Json(new { msg = msg, status = "error" });
             }
-
-            if (LoginData.Login(u) != 0)
+            if (u.UserName == null)
             {
-                return Json(new { msg = "登陆成功!", status = "ok" });
+                return Json(new { msg = "账号不能为空！", status = "error" });
+            }
+            if (u.Pwd == null)
+            {
+                return Json(new { msg = "密码不能为空！", status = "error" });
+            }
 
+            else if (list.IsLogin == 1 && list.Isok == 1)
+            {
+
+                return Json(new { msg = "登陆成功!", status = "ok" });
+                
+            }
+            else if (list.IsLogin == 0)
+            {
+                return Json(new { msg = "账号密码错误!", status = "error" });
+            }
+
+            if (list.Isok == 0)
+            {
+                return Json(new { msg = "该用户已被禁用!", status = "error" });
             }
             else
             {
                 return Json(new { msg = "账号密码错误!", status = "error" });
             }
-
         }
 
         private (bool, string) VerifyValiate()
@@ -163,6 +181,10 @@ namespace WMS_MVC.Controllers
             string base64Str = this._verificationCodeAESHelp.AES_Encrypt_Return_Base64String(json);
             this._verificationCodeAESHelp.SetCookie(VerificationCodeAESHelp._SlideCode, base64Str, 10);
 
+        }
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }

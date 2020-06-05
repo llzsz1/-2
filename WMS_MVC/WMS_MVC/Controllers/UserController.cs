@@ -12,5 +12,9 @@ namespace WMS_MVC.Controllers
         {
             return View();
         }
+        public IActionResult DeptShow()
+        {
+            return View();
+        }
     }
 }

@@ -10,68 +10,10 @@
     <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
     <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="../../css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../images/favicon.png" />
-    <script src="D:\大实训2  仓库管理系统\WMS_MVC\WMS_MVC\WMS_MVC\wwwroot\lib\jquery\dist\jquery.js"></script>
-    <link href="D:\大实训2  仓库管理系统\WMS_MVC\WMS_MVC\WMS_MVC\wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
-    <script>
-        var pageSize = 6;
-        var currentPage = 1;
-        var totalPage = 1;
-
-        $(function () {
-            Show(1);
-        })
-
-        function Show(page) {
-            var obj = {};
-            obj.currentPage = page;
-            obj.pageSize = pageSize;
-
-
-            $.ajax({
-                url: 'http://localhost:63209/api/Delivery/DeliveryShow',
-                type: 'get',
-                dataType: 'json',
-                contentType: 'application/json',
-                data: { time1: $("#Texttime1").val(), time2: $("#Textrime2").val(), CurrentPage: page, },
-                crossDomain: true,
-                success: function (d) {
-                    $("#TotalCount").text(d.totalCount)
-                    $("#TotalPage").text(d.totalPage)
-                    $("#CurrentPage").text(d.currentPage)
-                    //最大页
-                    totalPage = d.totalPage;
-                    //当前页
-                    currentPage = d.currentPage;
-
-                    $("#td").empty();
-                    $(d.deliverys).each(function () {
-                        var list = '<tr>'
-                            + '<td>' + this.deliveryId + '</td>'
-                            + '<td>' + this.stockOutId + '</td>'
-                            + '<td>' + this.carrierId + '</td>'
-                            + '<td>' + this.isDel + '</td>'
-                            + '<td>' + this.remark + '</td>'
-                            + '<td>' + this.createBy + '</td>'
-                            + '<td>' + this.createDate + '</td>'
-                            + '<td>' + this.modifiedBy + '</td>'
-                            + '<td>' + this.modifiedDate + '</td>'
-                            + '<td>' + this.deliveryDate + '</td>'
-                            + '<td>' + this.trackingNo + '</td>'
-                        '</tr>'
-                        $("#td").append(list);
-                    })
-
-                }
-
-            })
-        }
-    </script>
 </head>
 
 <body>
@@ -80,8 +22,10 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                    <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo" href="../../index.html">
+                        <img src="../../images/logo.svg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="../../index.html">
+                        <img src="../../images/logo-mini.svg" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-sort-variant"></span>
                     </button>
@@ -113,11 +57,11 @@
                                     <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        David Grey
-                                    </h6>
+                                    <h6 class="ellipsis font-weight-normal">David Grey
+                  </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         The meeting is cancelled
+                 
                                     </p>
                                 </div>
                             </a>
@@ -126,11 +70,11 @@
                                     <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        Tim Cook
-                                    </h6>
+                                    <h6 class="ellipsis font-weight-normal">Tim Cook
+                  </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         New product launch
+                 
                                     </p>
                                 </div>
                             </a>
@@ -139,11 +83,11 @@
                                     <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        Johnson
-                                    </h6>
+                                    <h6 class="ellipsis font-weight-normal">Johnson
+                  </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         Upcoming board meeting
+                 
                                     </p>
                                 </div>
                             </a>
@@ -166,6 +110,7 @@
                                     <h6 class="font-weight-normal">Application Error</h6>
                                     <p class="font-weight-light small-text mb-0 text-muted">
                                         Just now
+                 
                                     </p>
                                 </div>
                             </a>
@@ -179,6 +124,7 @@
                                     <h6 class="font-weight-normal">Settings</h6>
                                     <p class="font-weight-light small-text mb-0 text-muted">
                                         Private message
+                 
                                     </p>
                                 </div>
                             </a>
@@ -192,6 +138,7 @@
                                     <h6 class="font-weight-normal">New user registration</h6>
                                     <p class="font-weight-light small-text mb-0 text-muted">
                                         2 days ago
+                 
                                     </p>
                                 </div>
                             </a>
@@ -206,11 +153,11 @@
                             <a class="dropdown-item">
                                 <i class="mdi mdi-settings text-primary"></i>
                                 Settings
-                            </a>
+              </a>
                             <a class="dropdown-item">
                                 <i class="mdi mdi-logout text-primary"></i>
                                 Logout
-                            </a>
+              </a>
                         </div>
                     </li>
                 </ul>
@@ -238,11 +185,21 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="Delivery.html">发货记录</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="Inventoryrecord.html">库存记录</a></li>
-
-                                <li class="nav-item"> <a class="nav-link" href="Inventorymove.html">库存移动</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">管理</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic1">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="pages/ui-features1/buttons1.html">用户管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="pages/ui-features1/typography1.html">部门管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -278,11 +235,11 @@
                         </a>
                         <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/samples/login.html">Login </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/samples/login-2.html">Login 2 </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/samples/register.html">Register </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/samples/register-2.html">Register 2 </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../pages/samples/lock-screen.html">Lockscreen </a></li>
                             </ul>
                         </div>
                     </li>
@@ -297,54 +254,7 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <table class="table table-hover">
-                        <tr>
-                            <td>日期范围</td>
-                            <td><input id="Texttime1" type="text"  /></td>
-                            <td><input id="Textrime2" type="text"  /></td>
-
-
-                            <td><input id="Button1" type="button" value="查询" class="btn btn-info" onclick="Show(1)" /></td>
-                        </tr>
-                    </table>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>发货单号</th>
-                                <th>出库单号</th>
-                                <th>承运商</th>
-                                <th>是否删除</th>
-                                <th>备注</th>
-                                <th>创建者</th>
-                                <th>创建时间</th>
-                                <th>修改者</th>
-                                <th>修改时间</th>
-                                <th>发货日期</th>
-                                <th>快递单号</th>
-                            </tr>
-                        </thead>
-                        <tbody id="td"></tbody>
-                    </table>
-                    <table class="table">
-                        <tr>
-                            <td style="text-align: center; vertical-align: middle; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">总记录数<span id="TotalCount"></span>条</td>
-                            <td style="text-align: center; vertical-align: middle; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">总共<span id="TotalPage"></span>页</td>
-                            <td style="text-align: center; vertical-align: middle; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">当前第<span id="CurrentPage"></span>页</td>
-                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                                <input id="Button1" type="button" value="首页" onclick="Show(1)" class="btn btn-primary" />
-                            </td>
-                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                                <input type="button" value="<" onclick="Show(currentPage - 1)" class="btn btn-primary" />
-                            </td>
-                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                                <input type="button" value=">" onclick="Show(currentPage + 1)" class="btn btn-primary" />
-                            </td>
-                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                                <input type="button" value="尾页" onclick="Show(totalPage)" class="btn btn-primary" />
-                            </td>
-                        </tr>
-                    </table>
-
+                 
 
                 </div>
                 <!-- content-wrapper ends -->
@@ -365,15 +275,11 @@
     <!-- plugins:js -->
     <script src="../../vendors/base/vendor.bundle.base.js"></script>
     <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
     <!-- inject:js -->
     <script src="../../js/off-canvas.js"></script>
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
     <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
 </body>
 
 </html>
