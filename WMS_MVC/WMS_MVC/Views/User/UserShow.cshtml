@@ -86,9 +86,8 @@
                             + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.isOK == true ? "启用" : "禁用") + '</td>'
                             + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.createDate + '</td>'
                             + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.modifiedDate + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.roleName + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-danger' onclick=UptUser(" + this.userId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptUser1(" + this.userId + ") />")
-                            
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.roleName + '</td>'                          
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.userName == "zk" ? "" : (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-danger' onclick=UptUser(" + this.userId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptUser1(" + this.userId + ") />"))
                             + '</td>'
                             + '</tr>';
                         $("#tb").append(line);
@@ -134,6 +133,8 @@
                 }
             })
         }
+
+
     </script>
 
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
