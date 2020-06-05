@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {}
+    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "projectUniqueName": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
         "projectName": "WMS_DAL",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
+        "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "packagesPath": "C:\\Users\\a1761\\.nuget\\packages\\",
+        "outputPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a1761\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
-                "projectPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
               }
             }
           }
@@ -65,24 +65,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "projectUniqueName": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
         "projectName": "WMS_Entity",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
+        "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "packagesPath": "C:\\Users\\a1761\\.nuget\\packages\\",
+        "outputPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a1761\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
