@@ -3,17 +3,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th>用户编号</th>
-            <th>用户名</th>
-            <th>用户昵称</th>
-            <th>邮箱</th>
-            <th>电话</th>
-            <th>性别</th>
-            <th>部门</th>
-            <th>是否禁用</th>
+            <th>部门编号</th>
+            <th>部门名称</th>
+            <th>是否启用</th>
             <th>创建时间</th>
             <th>修改时间</th>
-            <th>角色</th>
             <th>操作</th>
         </tr>
     </thead>
@@ -59,7 +53,7 @@
             obj.pageSize = pageSize;
 
             $.ajax({
-                url: 'http://localhost:63209/api/User/Get',
+                url: 'http://localhost:63209/api/User2/get',
                 type: 'get',
                 dataType: 'json',
                 data: obj,
@@ -76,18 +70,12 @@
                     $("#tb").empty();
                     $(d.users).each(function () {
                         var line = '<tr>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.userId + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.userName + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.userNickname + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.email + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.tel + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.sex == true ? "男" : "女") + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.deptName + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.DeptId + '</td>'
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.DeptName + '</td>'
                             + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.isOK == true ? "启用" : "禁用") + '</td>'
                             + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.createDate + '</td>'
                             + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.modifiedDate + '</td>'
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + this.roleName + '</td>'                          
-                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.userName == "zk" ? "" : (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-danger' onclick=UptUser(" + this.userId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptUser1(" + this.userId + ") />"))
+                            + '<td style="text-align: center;vertical-align:middle;color: #011b0a; font-family: STXingkai;font-size: larger;">' + (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-danger' onclick=UptDept(" + this.DeptId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptDept1(" + this.DeptId + ") />")
                             + '</td>'
                             + '</tr>';
                         $("#tb").append(line);
@@ -101,7 +89,7 @@
         //修改状态（是否启用）
         function UptUser(id) {
             $.ajax({
-                url: 'http://localhost:63209/api/User/PutUser/' + id,
+                url: 'http://localhost:63209/api/User2/PutDept/' + id,
                 type: 'put',
                 dataType: 'json',
                 data: JSON.stringify({ UserId: id }),
@@ -118,7 +106,7 @@
         }
         function UptUser1(id) {
             $.ajax({
-                url: 'http://localhost:63209/api/User/PutUser1/' + id,
+                url: 'http://localhost:63209/api/User2/PutDept2/' + id,
                 type: 'put',
                 dataType: 'json',
                 data: JSON.stringify({ UserId: id }),

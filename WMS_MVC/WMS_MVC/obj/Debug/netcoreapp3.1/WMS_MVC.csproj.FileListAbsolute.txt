@@ -223,7 +223,6 @@ D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.TagHelpers.outpu
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.RazorCoreGenerate.cache
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -241,4 +240,6 @@ D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.genruntimeconfig
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.csproj.CoreCompileInputs.cache
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.MvcApplicationPartsAssemblyInfo.cache
 D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\User\UserShow.cshtml.g.cs
-D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\bin\Debug\netcoreapp3.1\template\package.json
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\User\DeptShow.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs

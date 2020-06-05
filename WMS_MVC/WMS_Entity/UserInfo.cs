@@ -16,5 +16,9 @@ namespace WMS_Entity
         public DateTime CreateDate { get; set; }
         public DateTime ModifiedDate { get; set; }
         public int RoleId { get; set; }
+
+        public int IsLogin { get; set; }
+        public int Isok { get; set; }
+        public string Name { get; set; }
     }
 }
