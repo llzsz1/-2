@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {}
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {}
   },
   "projects": {
-    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
         "projectName": "WMS_DAL",
-        "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
-        "packagesPath": "C:\\Users\\a1761\\.nuget\\packages\\",
-        "outputPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\a1761\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
-                "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
               }
             }
           }
@@ -65,25 +67,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
         "projectName": "WMS_Entity",
-        "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
-        "packagesPath": "C:\\Users\\a1761\\.nuget\\packages\\",
-        "outputPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\a1761\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -120,25 +124,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
         "projectName": "WMS_MVC",
-        "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
-        "packagesPath": "C:\\Users\\a1761\\.nuget\\packages\\",
-        "outputPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_MVC\\obj\\",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\a1761\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -150,11 +156,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
-                "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
               },
-              "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
-                "projectPath": "D:\\大实训2  仓库管理系统\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
               }
             }
           }
@@ -199,7 +205,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
