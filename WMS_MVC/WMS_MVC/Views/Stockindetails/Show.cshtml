@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h2>Show</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>操作</td>
+            <td>明细ID</td>
+            <td>入库单号</td>
+            <td>状态</td>
+            <td>计划数量</td>
+            <td>实际数量</td>
+            <td>货架编号</td>
+            <td>货架名称</td>
+            <td>审核人</td>
+            <td>审核时间</td>
+            <td>备注</td>
+            <td>创建人</td>
+            <td>创建时间</td>
+            <td>修改人</td>
+            <td>修改时间</td>
+        </tr>
+    </thead>
+    <tbody id="tb"></tbody>
+</table>
+
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            Show(1);
+        })
+        //显示
+        function Show() {
+            $.ajax({
+                url: "http://localhost:63209/api/Stockindetails/Gets?StockInIds=" + 5,
+                type: "Get",
+                //data: {  },
+                contentType: "application/json",
+                success: function (d) {
+                    $("#tb").empty();
+                    //循环遍历
+                    $(d).each(function () {
+                        //拼接tr一行
+                        var line = '<tr>'
+                            + '<td>' + '<a href=javascript:; onclick="Getid(' + this.stockInDetailId + ')">修改</a>' + '    ' + '<a href=javascript:; onclick="Del(' + this.stockInDetailId + ')">删除</a>' + '</td>'
+                            + '<td>' + this.stockInDetailId + '</td>'
+                            + '<td>' + this.stockInId + '</td>'
+                            + '<td>' + this.status + '</td>'
+                            + '<td>' + this.planInQty + '</td>'
+                            + '<td>' + this.actInQty + '</td>'
+                            + '<td>' + this.storagerackId + '</td>'
+                            + '<td>' + this.storagerackname + '</td>'
+                            + '<td>' + this.auditinId + '</td>'
+                            + '<td>' + this.auditinTime + '</td>'
+                            + '<td>' + this.remark + '</td>'
+                            + '<td>' + this.createBy + '</td>'
+                            + '<td>' + this.createDate + '</td>'
+                            + '<td>' + this.modifiedBy + '</td>'
+                            + '<td>' + this.modifiedDate + '</td>'
+                            + '</tr>'
+                        //将数据放入表格
+                        $("#tb").append(line);
+                    });
+                }
+            });
+        }
+        function Getid(id) {
+            location.href = '/Stockindetails/Upt?id=' + id;
+        }
+        //删除
+        function Del(id) {
+            $.ajax({
+                url: 'http://localhost:63209/api/Stockindetails/Delete/' + id,
+                type: 'Delete',
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (d) {
+                    if (d > 0) {
+                        alert('删除成功');
+                        location.href = '/Stockindetails/Show';
+                    }
+                }
+            })
+        }
+    </script>
+}

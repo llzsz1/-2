@@ -83,13 +83,12 @@
     <None Include="wwwroot\template\js\off-canvas.js" />
     <None Include="wwwroot\template\js\tabs.js" />
     <None Include="wwwroot\template\js\template.js" />
-    <None Include="wwwroot\template\pages\.DS_Store" />
     <None Include="wwwroot\template\pages\charts\.DS_Store" />
     <None Include="wwwroot\template\pages\charts\chartjs.html" />
-    <None Include="wwwroot\template\pages\forms\.DS_Store" />
     <None Include="wwwroot\template\pages\forms\basic_elements.html" />
     <None Include="wwwroot\template\pages\icons\.DS_Store" />
     <None Include="wwwroot\template\pages\icons\mdi.html" />
+    <None Include="wwwroot\template\pages\lllj\ReservoirareaPage.html" />
     <None Include="wwwroot\template\pages\tables\.DS_Store" />
     <None Include="wwwroot\template\pages\tables\basic-table.html" />
     <None Include="wwwroot\template\pages\ui-features1\DeptShow.html" />
