@@ -22,3 +22,15 @@ D:\Four\WMS_MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.AssemblyInfo.cs
 D:\Four\WMS_MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csproj.CopyComplete
 D:\Four\WMS_MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.dll
 D:\Four\WMS_MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.pdb
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_DAL.deps.json
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_DAL.dll
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_DAL.pdb
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_Entity.dll
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_Entity.pdb
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csprojAssemblyReference.cache
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.AssemblyInfoInputs.cache
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.AssemblyInfo.cs
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csproj.CoreCompileInputs.cache
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csproj.CopyComplete
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.dll
+C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.pdb
