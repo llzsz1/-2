@@ -367,3 +367,8 @@ L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcor
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.dll
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.pdb
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.genruntimeconfig.cache
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockindetails\Add.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockindetails\Show.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockindetails\Upt.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockins\Add.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockins\Show.cshtml.g.cs
