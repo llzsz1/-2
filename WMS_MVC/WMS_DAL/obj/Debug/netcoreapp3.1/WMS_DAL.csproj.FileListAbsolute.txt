@@ -34,3 +34,15 @@ L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_DAL\obj\Debug\netcor
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csproj.CopyComplete
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.dll
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.pdb
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_DAL.deps.json
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_DAL.dll
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_DAL.pdb
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_Entity.dll
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\bin\Debug\netcoreapp3.1\WMS_Entity.pdb
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.AssemblyInfo.cs
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.csproj.CopyComplete
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.dll
+C:\Users\DELL\Desktop\WMS_MVC - 副本\WMS_MVC\WMS_DAL\obj\Debug\netcoreapp3.1\WMS_DAL.pdb
