@@ -182,21 +182,6 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">仓库管理</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Delivery.html">发货记录</a>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Inventoryrecord.html">库存记录</a>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Inventorymove.html">库存移动</a>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
                             <span class="menu-title">用户及部门管理</span>
@@ -214,7 +199,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basicc" aria-expanded="false" aria-controls="ui-basicc">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">管理</span>
+                            <span class="menu-title">客户管理</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basicc">
@@ -228,12 +213,42 @@
                     <!--！！！张俊雷！！！！-->
 
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">库存管理①</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Delivery.html">发货记录</a>
+                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Inventoryrecord.html">库存记录</a>
+                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Inventorymove.html">库存移动</a>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">仓库管理</span>
+                            <span class="menu-title">库存管理②</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basic2">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="Stockin.html">入库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Stockout.html">出库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Inventory.html">库存查询</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">库存管理③</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic3">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/ReservoirareaPage.html">仓库管理</a></li>
                                 <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
@@ -244,160 +259,160 @@
 
                 </ul>
             </nav>
-        
-        <!-- partial -->
-        <div class="main-panel">
-            <div class="content-wrapper">
 
-                <table class="table table-bordered table table-borderless">
-                    <thead>
-                        <tr style="text-align: center">
-                            <th>用户编号</th>
-                            <th>用户名</th>
-                            <th>用户昵称</th>
-                            <th>邮箱</th>
-                            <th>电话</th>
-                            <th>性别</th>
-                            <th>部门</th>
-                            <th>是否禁用</th>
-                            <th>创建时间</th>
-                            <th>修改时间</th>
-                            <th>角色</th>
-                            <th>操作</th>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+
+                    <table class="table table-bordered table table-borderless">
+                        <thead>
+                            <tr style="text-align: center">
+                                <th>用户编号</th>
+                                <th>用户名</th>
+                                <th>用户昵称</th>
+                                <th>邮箱</th>
+                                <th>电话</th>
+                                <th>性别</th>
+                                <th>部门</th>
+                                <th>是否禁用</th>
+                                <th>创建时间</th>
+                                <th>修改时间</th>
+                                <th>角色</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tb">
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle; color: #000000;">总记录数<span id="TotalCount"></span>条</td>
+                            <td style="text-align: center; vertical-align: middle; color: #000000;">总共<span id="TotalPage"></span>页</td>
+                            <td style="text-align: center; vertical-align: middle; color: #000000;">当前第<span id="CurrentPage"></span>页</td>
+                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                                <input id="Button1" type="button" value="首页" onclick="Show(1)" class="btn btn-dark" />
+                            </td>
+                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                                <input type="button" value="◀" onclick="Show(currentPage - 1)" class="btn btn-dark" />
+                            </td>
+                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                                <input type="button" value="▶" onclick="Show(currentPage + 1)" class="btn btn-dark" />
+                            </td>
+                            <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
+                                <input type="button" value="尾页" onclick="Show(totalPage)" class="btn btn-dark" />
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody id="tb">
-                    </tbody>
-                </table>
+                    </table>
 
-                <table class="table">
-                    <tr>
-                        <td style="text-align: center; vertical-align: middle; color: #000000;">总记录数<span id="TotalCount"></span>条</td>
-                        <td style="text-align: center; vertical-align: middle; color: #000000;">总共<span id="TotalPage"></span>页</td>
-                        <td style="text-align: center; vertical-align: middle; color: #000000;">当前第<span id="CurrentPage"></span>页</td>
-                        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                            <input id="Button1" type="button" value="首页" onclick="Show(1)" class="btn btn-dark" />
-                        </td>
-                        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                            <input type="button" value="◀" onclick="Show(currentPage - 1)" class="btn btn-dark" />
-                        </td>
-                        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                            <input type="button" value="▶" onclick="Show(currentPage + 1)" class="btn btn-dark" />
-                        </td>
-                        <td style="text-align: center; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">
-                            <input type="button" value="尾页" onclick="Show(totalPage)" class="btn btn-dark" />
-                        </td>
-                    </tr>
-                </table>
-
-                <!-- page-body-wrapper ends -->
+                    <!-- page-body-wrapper ends -->
+                </div>
             </div>
-        </div>
-        <!-- container-scroller -->
-        <!-- plugins:js -->
-        <script src="../../vendors/base/vendor.bundle.base.js"></script>
-        <!-- endinject -->
-        <!-- inject:js -->
-        <script src="../../js/off-canvas.js"></script>
-        <script src="../../js/hoverable-collapse.js"></script>
-        <script src="../../js/template.js"></script>
-        <!-- endinject -->
+            <!-- container-scroller -->
+            <!-- plugins:js -->
+            <script src="../../vendors/base/vendor.bundle.base.js"></script>
+            <!-- endinject -->
+            <!-- inject:js -->
+            <script src="../../js/off-canvas.js"></script>
+            <script src="../../js/hoverable-collapse.js"></script>
+            <script src="../../js/template.js"></script>
+            <!-- endinject -->
 
-        <script>
-            var pageSize = 5;
-            var currentPage = 1;
-            var totalPage = 1;
+            <script>
+                var pageSize = 5;
+                var currentPage = 1;
+                var totalPage = 1;
 
-            $(function () {
-                Show(1);
-            })
-
-            function Show(page) {
-
-                var obj = {};
-                obj.currentPage = page;
-                obj.pageSize = pageSize;
-
-                $.ajax({
-                    url: 'http://localhost:63209/api/User/Get',
-                    type: 'get',
-                    dataType: 'json',
-                    data: obj,
-                    success: function (d) {
-
-                        $("#TotalCount").text(d.totalCount)
-                        $("#TotalPage").text(d.totalPage)
-                        $("#CurrentPage").text(d.currentPage)
-                        //最大页
-                        totalPage = d.totalPage;
-                        //当前页
-                        currentPage = d.currentPage;
-
-                        $("#tb").empty();
-                        $(d.users).each(function () {
-                            var line = '<tr>'
-                                + '<td>' + this.userId + '</td>'
-                                + '<td>' + this.userName + '</td>'
-                                + '<td>' + this.userNickname + '</td>'
-                                + '<td>' + this.email + '</td>'
-                                + '<td>' + this.tel + '</td>'
-                                + '<td>' + (this.sex == true ? "男" : "女") + '</td>'
-                                + '<td>' + this.deptName + '</td>'
-                                + '<td>' + (this.isOK == true ? "启用" : "禁用") + '</td>'
-                                + '<td>' + this.createDate + '</td>'
-                                + '<td>' + this.modifiedDate + '</td>'
-                                + '<td>' + this.roleName + '</td>'
-                                + '<td>' + (this.userName == "zk" ? "" : (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-secondary btn - rounded btn - fw' onclick=UptUser(" + this.userId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptUser1(" + this.userId + ") />"))
-                                + '</td>'
-                                + '</tr>';
-                            $("#tb").append(line);
-                        })
-                    }
-
+                $(function () {
+                    Show(1);
                 })
-            }
 
-            //修改状态（是否启用）
-            function UptUser(id) {
-                $.ajax({
-                    url: 'http://localhost:63209/api/User/PutUser/' + id,
-                    type: 'put',
-                    dataType: 'json',
-                    data: JSON.stringify({ UserId: id }),
-                    contentType: "application/json",
-                    success: function (d) {
-                        if (d > 0) {
-                            Show();
+                function Show(page) {
+
+                    var obj = {};
+                    obj.currentPage = page;
+                    obj.pageSize = pageSize;
+
+                    $.ajax({
+                        url: 'http://localhost:63209/api/User/Get',
+                        type: 'get',
+                        dataType: 'json',
+                        data: obj,
+                        success: function (d) {
+
+                            $("#TotalCount").text(d.totalCount)
+                            $("#TotalPage").text(d.totalPage)
+                            $("#CurrentPage").text(d.currentPage)
+                            //最大页
+                            totalPage = d.totalPage;
+                            //当前页
+                            currentPage = d.currentPage;
+
+                            $("#tb").empty();
+                            $(d.users).each(function () {
+                                var line = '<tr>'
+                                    + '<td>' + this.userId + '</td>'
+                                    + '<td>' + this.userName + '</td>'
+                                    + '<td>' + this.userNickname + '</td>'
+                                    + '<td>' + this.email + '</td>'
+                                    + '<td>' + this.tel + '</td>'
+                                    + '<td>' + (this.sex == true ? "男" : "女") + '</td>'
+                                    + '<td>' + this.deptName + '</td>'
+                                    + '<td>' + (this.isOK == true ? "启用" : "禁用") + '</td>'
+                                    + '<td>' + this.createDate + '</td>'
+                                    + '<td>' + this.modifiedDate + '</td>'
+                                    + '<td>' + this.roleName + '</td>'
+                                    + '<td>' + (this.userName == "zk" ? "" : (this.isOK == true ? "<input id='Button1' type='button' value='禁用' class='btn btn-secondary btn - rounded btn - fw' onclick=UptUser(" + this.userId + ") />" : "<input id='Button1' type='button' value='启用' class='btn btn-danger' onclick=UptUser1(" + this.userId + ") />"))
+                                    + '</td>'
+                                    + '</tr>';
+                                $("#tb").append(line);
+                            })
                         }
-                        else {
-                            alert('操作失败！');
+
+                    })
+                }
+
+                //修改状态（是否启用）
+                function UptUser(id) {
+                    $.ajax({
+                        url: 'http://localhost:63209/api/User/PutUser/' + id,
+                        type: 'put',
+                        dataType: 'json',
+                        data: JSON.stringify({ UserId: id }),
+                        contentType: "application/json",
+                        success: function (d) {
+                            if (d > 0) {
+                                Show();
+                            }
+                            else {
+                                alert('操作失败！');
+                            }
                         }
-                    }
-                })
-            }
-            function UptUser1(id) {
-                $.ajax({
-                    url: 'http://localhost:63209/api/User/PutUser1/' + id,
-                    type: 'put',
-                    dataType: 'json',
-                    data: JSON.stringify({ UserId: id }),
-                    contentType: "application/json",
-                    success: function (d) {
-                        if (d > 0) {
-                            Show();
+                    })
+                }
+                function UptUser1(id) {
+                    $.ajax({
+                        url: 'http://localhost:63209/api/User/PutUser1/' + id,
+                        type: 'put',
+                        dataType: 'json',
+                        data: JSON.stringify({ UserId: id }),
+                        contentType: "application/json",
+                        success: function (d) {
+                            if (d > 0) {
+                                Show();
+                            }
+                            else {
+                                alert('操作失败！');
+                            }
                         }
-                        else {
-                            alert('操作失败！');
-                        }
-                    }
-                })
-            }
+                    })
+                }
 
 
-        </script>
+            </script>
 
-        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-        <script src="~/lib/jquery/dist/jquery.js"></script>
+            <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+            <script src="~/lib/jquery/dist/jquery.js"></script>
 </body>
 
 </html>
