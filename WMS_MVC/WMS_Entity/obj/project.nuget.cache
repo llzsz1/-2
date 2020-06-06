@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dNK9qa0sKdnywxkCmLh2ceJji0YdAUQRxZk0Bw/mhx8WKjC6K2dgzBVdZstAUEjLr2wCSkZePaKq78KvJQL1TA==",
+  "dgSpecHash": "A4h13uFrMOWmE4/uA/6Xs+37J0PLptKuRXTGlMPqehJAg0Htz5MpLLePFNLw8I/j210NK84H9Dni57AV3WVkRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\WMS_MVC - 副本\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\o\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
