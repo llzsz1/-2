@@ -504,3 +504,6 @@ D:\大实训2  仓库管理系统\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.
 D:\大实训2  仓库管理系统\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.dll
 D:\大实训2  仓库管理系统\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.pdb
 D:\大实训2  仓库管理系统\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\WMS_MVC.genruntimeconfig.cache
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Delivery\Show.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Inventorymove\Show.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Inventoryrecord\Show.cshtml.g.cs
