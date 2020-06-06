@@ -182,7 +182,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="Stockin.html">入库管理</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="Stockout.html">出库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="Inventory.html">库存查询</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="Inventorys.html">库存查询</a></li>
                             </ul>
                         </div>
                     </li>
@@ -648,8 +648,8 @@
                 <table class="table table-hover">
                     <tr>
                         <td>日期范围</td>
-                        <td><input id="Texttime1" type="text" /></td>
-                        <td><input id="Textrime2" type="text" /></td>
+                        <td><input id="Texttime1" type="text" onclick="WdatePicker()" /></td>
+                        <td><input id="Textrime2" type="text" onclick="WdatePicker()" /></td>
                         <td>
                             <select id="Select1">
                                 <option value="">全部类型</option>
@@ -676,11 +676,11 @@
                             <td></td>
                             <td></td>
                             <td>操作</td>
-                            <td>入库单号</td>
+                            <td>出库单号</td>
                             <td>订单号</td>
-                            <td>入库类型</td>
-                            <td>供应商编号</td>
-                            <td>供应商名称</td>
+                            <td>出库类型</td>
+                            <td>客户编号</td>
+                            <td>客户名称</td>
                             <td>状态</td>
                             <td>备注</td>
                             <td>创建人</td>
@@ -719,7 +719,6 @@
 
 
     <!-- page-body-wrapper ends -->
-
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../vendors/base/vendor.bundle.base.js"></script>
@@ -732,6 +731,7 @@
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="../../../My97DatePicker/WdatePicker.js"></script>
     <script>
         $(function () {
             Show(1);
@@ -739,7 +739,7 @@
         //显示
         function Show(page) {
             $.ajax({
-                url: "http://localhost:63209/api/Stockins/Gets",
+                url: "http://localhost:63209/api/Stockouts/Getes",
                 type: "Get",
                 data: { time1: $("#Texttime1").val(), time2: $("#Textrime2").val(), type: $("#Select1").val(), state: $("#Select2").val(), CurrentPage: page, },
                 contentType: "application/json",
@@ -754,18 +754,18 @@
                     //清空表格
                     $("#tb").empty();
                     //循环遍历
-                    $(d.stockins).each(function () {
+                    $(d.stockouts).each(function () {
                         //拼接tr一行
                         var line = '<tr>'
-                            + '<td>' + '<input id="Checkbox1" type="checkbox" name="test" value=' + this.stockInId + ' />' + '</td>'
-                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4" href=javascript:; onclick="Shows(' + this.stockInId + ')">查看明细</a>' + '</td>'
-                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4s" href=javascript:; onclick="Getide(' + this.stockInId + ')">添加明细</a>' + '    ' + '<a href=javascript:; onclick="Shenhe(' + this.stockInId + ')">审核</a>' + '</td>'
-                            + '<td>' + this.stockInId + '</td>'
+                            + '<td>' + '<input id="Checkbox1" type="checkbox" name="test" value=' + this.stockOutId + ' />' + '</td>'
+                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4" href=javascript:; onclick="Shows(' + this.stockOutId + ')">查看明细</a>' + '</td>'
+                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4s" href=javascript:; onclick="Getide(' + this.stockOutId + ')">添加明细</a>' + '    ' + '<a href=javascript:; onclick="Shenhe(' + this.stockOutId + ')">审核</a>' + '</td>'
+                            + '<td>' + this.stockOutId + '</td>'
                             + '<td>' + this.orderNo + '</td>'
-                            + '<td>' + this.stockInType + '</td>'
-                            + '<td>' + this.supplierId + '</td>'
-                            + '<td>' + this.supplierName + '</td>'
-                            + '<td>' + this.stockInStatus + '</td>'
+                            + '<td>' + this.stockOutType + '</td>'
+                            + '<td>' + this.customerId + '</td>'
+                            + '<td>' + this.customername + '</td>'
+                            + '<td>' + this.stockOutStatus + '</td>'
                             + '<td>' + this.remark + '</td>'
                             + '<td>' + this.createBy + '</td>'
                             + '<td>' + this.createDate + '</td>'
@@ -793,11 +793,11 @@
         }
         function Add() {
             var obj = {};
-            obj.stockInType = $("#Select1").val();
-            obj.supplierId = parseInt($("#Select2").val());
+            obj.stockOutType = $("#Select33").val();
+            obj.customerId = parseInt($("#Select44").val());
             obj.remark = $("#TextArea5").val();
             $.ajax({
-                url: 'http://localhost:63209/api/Stockins/Post',
+                url: 'http://localhost:63209/api/Stockouts/Post',
                 type: 'Post',
                 data: JSON.stringify(obj),
                 contentType: "application/json",
@@ -805,7 +805,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功');
-                        location.href = '/Stockins/Show';
+                        location.href = 'Stockout.html';
                     }
                 }
             })
@@ -813,14 +813,14 @@
         //反填
         function Find() {
             $.ajax({
-                url: 'http://localhost:63209/api/Stockins/Get/' + chk(),
+                url: 'http://localhost:63209/api/Stockouts/Get/' + chk(),
                 type: 'get',
                 contentType: "application/json",
                 dataType: 'json',
                 //crossDomain: true;
                 success: function (d) {
-                    $("#Select11").val(d.stockInType);
-                    $("#Select22").val(d.supplierId);
+                    $("#Select11").val(d.stockOutType);
+                    $("#Select22").val(d.customerId);
                     $("#TextArea6").val(d.remark);
                 }
             })
@@ -828,12 +828,12 @@
         //修改
         function Upt() {
             var obj = {};
-            obj.stockInType = $("#Select11").val();
-            obj.supplierId = parseInt($("#Select22").val());
+            obj.stockOutType = $("#Select11").val();
+            obj.customerId = parseInt($("#Select22").val());
             obj.remark = $("#TextArea6").val();
-            obj.stockInId = parseInt(chk());
+            obj.stockOutId = parseInt(chk());
             $.ajax({
-                url: 'http://localhost:63209/api/Stockins/Puts',
+                url: 'http://localhost:63209/api/Stockouts/Put',
                 type: 'Post',
                 data: JSON.stringify(obj),
                 contentType: "application/json",
@@ -841,7 +841,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('修改成功');
-                        location.href = '/Stockins/Show';
+                        location.href = 'Stockout.html';
                     }
                 }
             })
@@ -849,14 +849,14 @@
         //删除
         function Dels() {
             $.ajax({
-                url: 'http://localhost:63209/api/Stockins/Delete?id=' + chk(),
+                url: 'http://localhost:63209/api/Stockouts/Delete?id=' + chk(),
                 type: 'Delete',
                 contentType: "application/json",
                 dataType: 'json',
                 success: function (d) {
                     if (d > 0) {
                         alert('删除成功');
-                        location.href = '/Stockins/Show';
+                        location.href = 'Stockout.html';
                     }
                 }
             })
@@ -867,7 +867,7 @@
             obj.id = parseInt(id);
             obj.name = "张三";
             $.ajax({
-                url: 'http://localhost:63209/api/RuKu/Puts',
+                url: 'http://localhost:63209/api/ChuKu/Puts',
                 type: 'Post',
                 data: JSON.stringify(obj),
                 contentType: "application/json",
@@ -875,9 +875,11 @@
                 success: function (date) {
                     if (date == 1) {
                         alert("审核成功");
+                        location.href = 'Stockout.html';
                     }
                     else {
                         alert("没有明细不能审核");
+                        location.href = 'Stockout.html';
                     }
                 }
 
@@ -886,7 +888,7 @@
         //显示
         function Shows(id) {
             $.ajax({
-                url: "http://localhost:63209/api/Stockindetails/Gets?StockInIds=" + id,
+                url: "http://localhost:63209/api/Stockoutdetails/Gets?StockoutIds=" + id,
                 type: "Get",
                 contentType: "application/json",
                 success: function (d) {
@@ -897,10 +899,10 @@
                         var line = '<tr>'
                             + '<td>' + '<a data-toggle="modal" data-target="#myModal4eee" href=javascript:; onclick="Getids(' + this.stockInDetailId + '),Finds()">修改</a>' + '    ' + '<a href=javascript:; onclick="Del(' + this.stockInDetailId + ')">删除</a>' + '</td>'
                             + '<td>' + this.stockInDetailId + '</td>'
-                            + '<td>' + this.stockInId + '</td>'
+                            + '<td>' + this.stockOutId + '</td>'
                             + '<td>' + this.status + '</td>'
-                            + '<td>' + this.planInQty + '</td>'
-                            + '<td>' + this.actInQty + '</td>'
+                            + '<td>' + this.planOutQty + '</td>'
+                            + '<td>' + this.actOutQty + '</td>'
                             + '<td>' + this.storagerackId + '</td>'
                             + '<td>' + this.storagerackname + '</td>'
                             + '<td>' + this.auditinId + '</td>'
@@ -927,14 +929,14 @@
         //删除
         function Del(id) {
             $.ajax({
-                url: 'http://localhost:63209/api/Stockindetails/Delete/' + id,
+                url: 'http://localhost:63209/api/Stockoutdetails/Delete?id=' + id,
                 type: 'Delete',
                 contentType: "application/json",
                 dataType: 'json',
                 success: function (d) {
                     if (d > 0) {
                         alert('删除成功');
-                        location.href = '/Stockindetails/Show';
+                        location.href = 'Stockout.html';
                     }
                 }
             })
@@ -944,15 +946,16 @@
         function Getide(id) {
             Id = id;
         }
+        //添加明细
         function Adds() {
             var obj = {};
-            obj.planInQty = parseInt($("#Text1").val());
-            obj.actInQty = parseInt($("#Text2").val());
-            obj.storagerackId = parseInt($("#Select6").val());
-            obj.remark = $("#TextArea3").val();
-            obj.stockInId = parseInt(Id);
+            obj.planOutQty = parseInt($("#Text99").val());
+            obj.actOutQty = parseInt($("#Text88").val());
+            obj.storagerackId = parseInt($("#Select77").val());
+            obj.remark = $("#TextArea66").val();
+            obj.stockOutId = parseInt(Id);
             $.ajax({
-                url: 'http://localhost:63209/api/Stockindetails/Post',
+                url: 'http://localhost:63209/api/Stockoutdetails/Post',
                 type: 'Post',
                 data: JSON.stringify(obj),
                 contentType: "application/json",
@@ -960,7 +963,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功');
-                        location.href = '/Stockindetails/Show';
+                        location.href = 'Stockout.html';
                     }
                 }
             })
@@ -970,29 +973,29 @@
             //var id = location.search;
             //id = id.substr(id.indexOf('=') + 1);
             $.ajax({
-                url: 'http://localhost:63209/api/Stockindetails/Get/' + ids,
+                url: 'http://localhost:63209/api/Stockoutdetails/Get/' + ids,
                 type: 'Get',
                 contentType: "application/json",
                 dataType: 'json',
                 crossDomain: true,
                 success: function (d) {
-                    $("#Text10").val(d.planInQty);
-                    $("#Text11").val(d.actInQty);
-                    $("#Select10").val(d.storagerackId);
-                    $("#TextArea10").val(d.remark);
+                    $("#Text123").val(d.planOutQty);
+                    $("#Text456").val(d.actOutQty);
+                    $("#Select789").val(d.storagerackId);
+                    $("#TextArea987").val(d.remark);
                 }
             })
         }
         //修改明细
         function Addss() {
             var obj = {};
-            obj.planInQty = parseInt($("#Text10").val());
-            obj.actInQty = parseInt($("#Text11").val());
-            obj.storagerackId = parseInt($("#Select10").val());
-            obj.remark = $("#TextArea10").val();
+            obj.planOutQty = parseInt($("#Text123").val());
+            obj.actOutQty = parseInt($("#Text456").val());
+            obj.storagerackId = parseInt($("#Select789").val());
+            obj.remark = $("#TextArea987").val();
             obj.stockInDetailId = parseInt(ids);
             $.ajax({
-                url: 'http://localhost:63209/api/Stockindetails/Puts',
+                url: 'http://localhost:63209/api/Stockoutdetails/Putss',
                 type: 'post',
                 data: JSON.stringify(obj),
                 contentType: "application/json",
@@ -1000,7 +1003,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('修改成功');
-                        location.href = '/Stockindetails/Show';
+                        location.href = 'Stockout.html';
                     }
                 }
             })
@@ -1051,16 +1054,16 @@
                 <table class="table table-hover">
                     <tr>
                         <td>计划数量</td>
-                        <td><input id="Text1" type="text" /></td>
+                        <td><input id="Text99" type="text" /></td>
                     </tr>
                     <tr>
                         <td>实际数量</td>
-                        <td><input id="Text2" type="text" /></td>
+                        <td><input id="Text88" type="text" /></td>
                     </tr>
                     <tr>
                         <td>货架</td>
                         <td>
-                            <select id="Select6">
+                            <select id="Select77">
                                 <option value="1">德玛西亚</option>
                                 <option value="2">啥也不是</option>
                                 <option value="3">啦啦啦啦</option>
@@ -1069,7 +1072,7 @@
                     </tr>
                     <tr>
                         <td>备注</td>
-                        <td><textarea id="TextArea3" rows="2" cols="20"></textarea></td>
+                        <td><textarea id="TextArea66" rows="2" cols="20"></textarea></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -1092,16 +1095,16 @@
                 <table class="table table-hover">
                     <tr>
                         <td>计划数量</td>
-                        <td><input id="Text10" type="text" /></td>
+                        <td><input id="Text123" type="text" /></td>
                     </tr>
                     <tr>
                         <td>实际数量</td>
-                        <td><input id="Text11" type="text" /></td>
+                        <td><input id="Text456" type="text" /></td>
                     </tr>
                     <tr>
                         <td>货架</td>
                         <td>
-                            <select id="Select10">
+                            <select id="Select789">
                                 <option value="1">德玛西亚</option>
                                 <option value="2">啥也不是</option>
                                 <option value="3">啦啦啦啦</option>
@@ -1110,7 +1113,7 @@
                     </tr>
                     <tr>
                         <td>备注</td>
-                        <td><textarea id="TextArea10" rows="2" cols="20"></textarea></td>
+                        <td><textarea id="TextArea987" rows="2" cols="20"></textarea></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -1132,7 +1135,7 @@
                 </div>
                 <table class="table table-bordered ">
                     <tr>
-                        <td>入库类型</td>
+                        <td>出库单</td>
                         <td>
                             <select id="Select11">
                                 <option value="0">请选择</option>
@@ -1142,7 +1145,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>供应商</td>
+                        <td>客户</td>
                         <td>
                             <select id="Select22">
                                 <option value="0">请选择</option>
@@ -1177,9 +1180,9 @@
                 </div>
                 <table class="table table-bordered ">
                     <tr>
-                        <td>入库类型</td>
+                        <td>出库单</td>
                         <td>
-                            <select id="Select1">
+                            <select id="Select33">
                                 <option value="0">请选择</option>
                                 <option value="采购入库">采购入库</option>
                                 <option value="外协入库">外协入库</option>
@@ -1187,9 +1190,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>供应商</td>
+                        <td>客户</td>
                         <td>
-                            <select id="Select2">
+                            <select id="Select44">
                                 <option value="0">请选择</option>
                                 <option value="1">天猫</option>
                                 <option value="2">淘宝</option>

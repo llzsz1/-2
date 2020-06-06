@@ -182,7 +182,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="Stockin.html">入库管理</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="Stockout.html">出库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="Inventory.html">库存查询</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="Inventorys.html">库存查询</a></li>
                             </ul>
                         </div>
                     </li>
@@ -648,8 +648,8 @@
                 <table class="table table-hover">
                     <tr>
                         <td>日期范围</td>
-                        <td><input id="Texttime1" type="text" /></td>
-                        <td><input id="Textrime2" type="text" /></td>
+                        <td><input id="Texttime1" type="text" onclick="WdatePicker()" /></td>
+                        <td><input id="Textrime2" type="text" onclick="WdatePicker()" /></td>
                         <td>
                             <select id="Select1">
                                 <option value="">全部类型</option>
@@ -687,6 +687,7 @@
                             <td>创建时间</td>
                             <td>修改人</td>
                             <td>修改时间</td>
+                            
                         </tr>
                     </thead>
                     <tbody id="tb"></tbody>
@@ -703,6 +704,7 @@
 
                     </tr>
                 </table>
+               
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:../../partials/_footer.html -->
@@ -719,7 +721,6 @@
 
 
     <!-- page-body-wrapper ends -->
-
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../vendors/base/vendor.bundle.base.js"></script>
@@ -732,12 +733,14 @@
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="../../../My97DatePicker/WdatePicker.js"></script>
     <script>
         $(function () {
             Show(1);
         })
         //显示
         function Show(page) {
+
             $.ajax({
                 url: "http://localhost:63209/api/Stockins/Gets",
                 type: "Get",
@@ -755,11 +758,16 @@
                     $("#tb").empty();
                     //循环遍历
                     $(d.stockins).each(function () {
+
+                        //if (this.modifiedBy != "") {
+                        //    $("#qwer" + id + "").hide(true)
+                        //    $("#qwer1").hide(true)
+                        //}
                         //拼接tr一行
                         var line = '<tr>'
                             + '<td>' + '<input id="Checkbox1" type="checkbox" name="test" value=' + this.stockInId + ' />' + '</td>'
-                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4" href=javascript:; onclick="Shows(' + this.stockInId + ')">查看明细</a>' + '</td>'
-                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4s" href=javascript:; onclick="Getide(' + this.stockInId + ')">添加明细</a>' + '    ' + '<a href=javascript:; onclick="Shenhe(' + this.stockInId + ')">审核</a>' + '</td>'
+                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4" href=javascript:; onclick="Shows(' + this.stockInId + ')" >查看明细</a>' + '</td>'
+                            + '<td>' + '<a data-toggle="modal" data-target="#myModal4s" href=javascript:; onclick="Getide(' + this.stockInId + ')" ">添加明细</a>' + '  ' +"<a href=javascript:; onclick='Shenhe(" + this.stockInId + ")'>审核</a>" + '</td>'
                             + '<td>' + this.stockInId + '</td>'
                             + '<td>' + this.orderNo + '</td>'
                             + '<td>' + this.stockInType + '</td>'
@@ -772,8 +780,15 @@
                             + '<td>' + this.modifiedBy + '</td>'
                             + '<td>' + this.modifiedDate + '</td>'
                             + '</tr>'
+                        
+                        
                         //将数据放入表格
                         $("#tb").append(line);
+                        //for (var i = 0; i < stockins.length; i++) {
+                        //    id = i;
+                        //    i++;
+                        //}
+                        
                     });
                 }
             });
@@ -805,7 +820,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功');
-                        location.href = '/Stockins/Show';
+                        location.href = 'Stockin.html';
                     }
                 }
             })
@@ -841,7 +856,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('修改成功');
-                        location.href = '/Stockins/Show';
+                        location.href = 'Stockin.html';
                     }
                 }
             })
@@ -856,7 +871,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('删除成功');
-                        location.href = '/Stockins/Show';
+                        location.href = 'Stockin.html';
                     }
                 }
             })
@@ -875,9 +890,11 @@
                 success: function (date) {
                     if (date == 1) {
                         alert("审核成功");
+                        location.href = 'Stockin.html';
                     }
                     else {
                         alert("没有明细不能审核");
+                        location.href = 'Stockin.html';
                     }
                 }
 
@@ -934,7 +951,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('删除成功');
-                        location.href = '/Stockindetails/Show';
+                        location.href = 'Stockin.html';
                     }
                 }
             })
@@ -960,7 +977,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('添加成功');
-                        location.href = '/Stockindetails/Show';
+                        location.href = 'Stockin.html';
                     }
                 }
             })
@@ -1000,7 +1017,7 @@
                 success: function (d) {
                     if (d > 0) {
                         alert('修改成功');
-                        location.href = '/Stockindetails/Show';
+                        location.href = 'Stockin.html';
                     }
                 }
             })
