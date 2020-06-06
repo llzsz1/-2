@@ -109,8 +109,6 @@
     <None Include="wwwroot\template\pages\ui-features1\DeptShow.html" />
     <None Include="wwwroot\template\pages\ui-features1\UserShow.html" />
     <None Include="wwwroot\template\pages\ui-features\.DS_Store" />
-    <None Include="wwwroot\template\pages\ui-features\buttons.html" />
-    <None Include="wwwroot\template\pages\ui-features\typography.html" />
     <None Include="wwwroot\template\partials\_footer.html" />
     <None Include="wwwroot\template\partials\_navbar.html" />
     <None Include="wwwroot\template\partials\_settings-panel.html" />
