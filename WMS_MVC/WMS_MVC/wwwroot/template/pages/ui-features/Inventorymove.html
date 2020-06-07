@@ -52,7 +52,7 @@
                     $("#td").empty();
                     $(d.inventorymoves).each(function () {
                         var list = '<tr>'
-                            + '<td>' + '<a href=javascript:;>添加明细</a>' + ' ' + '<a href=javascript:;>审核</a>' + '</td>'
+                           // + '<td>' + '<a href=javascript:;>添加明细</a>' + ' ' + '<a href=javascript:;>审核</a>' + '</td>'
                             + '<td>' + this.inventorymoveId + '</td>'
                             + '<td>' + this.sourceStoragerackId + '</td>'
                             + '<td>' + this.aimStoragerackId + '</td>'
@@ -314,9 +314,6 @@
             <div>
                 <input id="Button1" class="button" type="button" value="新增" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" />
             </div>
-            <div>
-                <input id="Button1" class="button" type="button" value="修改" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'" />
-            </div>
             <div class="main-panel">
                 <div class="content-wrapper">
                     <table class="table table-hover">
@@ -341,7 +338,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>操作</th>
+                                <!--<th>操作</th>-->
                                 <th>库存移动号</th>
                                 <th>原货架号</th>
                                 <th>目标货架号</th>

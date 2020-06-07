@@ -24,7 +24,6 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
     <script src="wwwroot\lib\jquery\dist\jquery.js"></script>
-    <script src="../../../My97DatePicker/WdatePicker.js"></script>
 </head>
 
 <body>
@@ -202,15 +201,14 @@
                             <span class="menu-title">仓库管理</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="ui-basic1">
+                        <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="ReservoirareaPage.html">仓库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="typography.html">库区管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="typography.html">货架管理</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/ResrvoirAreaShow.html">仓库管理</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/StoragerackPage.html">货架管理</a></li>
                             </ul>
                         </div>
                     </li>
-
                 </ul>
             </nav>
             <!-- partial -->
@@ -227,8 +225,8 @@
                             <td>
                                 所属仓库：
                                 <!--<select id="wid"></select>-->
-                                <select id="Select1">
-                                    <option value="">===请选择===</option>
+                                <select id="Select9">
+                                    <option value="0">===请选择===</option>
                                     <option value="1">山东1号</option>
                                     <option value="2">河南1号</option>
                                     <option value="3">山西1号</option>
@@ -237,10 +235,8 @@
 
                                 </select>
                             </td>
-                            <td>库区名称：<input id="name" type="text" /></td>
-                            <!--<td>创建时间：<input id="time1" type="text" class="text-behance" onclick="WdatePicker()" /></td>
+                            <td>库区名称：<input id="names" type="text" /></td>
 
-                            <td>结束时间：<input id="time2" type="text" onclick="WdatePicker()" /></td>-->
 
                             <td><input id="Button1" type="button" value="查询" onclick="Show(1)" class="btn btn-success" /></td>
 
@@ -287,14 +283,7 @@
                         </tr>
                     </table>
                 </div>
-                <!-- content-wrapper ends -->
-                <!-- partial:../../partials/_footer.html -->
-                <!--<footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright  2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
-                    </div>
-                </footer>-->
+
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->
@@ -317,16 +306,16 @@
                         <div class="form-group row">
                             <label for="exampleInputUsername2" class="col-sm-3 col-form-label">库区名称</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="reservoirAreaName" placeholder="库区名称">
+                                <input type="text" class="form-control" id="rName" placeholder="库区名称">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="exampleInputEmail2" class="col-sm-3 col-form-label">所属仓库</label>
                             <div class="col-sm-9">
-                                <!--<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">-->
-                                <!--<select id="wid" placeholder="所属仓库" class="form-control">select>-->
+
+                                <!--<select id="wid" placeholder="所属仓库" class="form-control"></select>-->
                                 <select id="Select1" placeholder="所属仓库" class="form-control">
-                                    <option value="">===请选择===</option>
+                                    <option value="0">===请选择===</option>
                                     <option value="1">山东1号</option>
                                     <option value="2">河南1号</option>
                                     <option value="3">山西1号</option>
@@ -339,13 +328,13 @@
                         <div class="form-group row">
                             <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">备注</label>
                             <div class="col-sm-9">
-                                <!--<textarea rows="2" cols="20" class="form-control" id="remark" placeholder="Password">-->
+
                                 <textarea id="remark" rows="2" cols="20" class="form-control" placeholder="备注"></textarea>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mr-2">添加</button>
-                        <button class="btn btn-light">取消</button>
+                        <button type="button" class="btn btn-primary mr-2" onclick="Adds()">添加</button>
+                        <button class="btn btn-light">关闭</button>
                     </form>
                 </div>
 
@@ -357,6 +346,63 @@
         </div>
     </div>
 
+
+
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="text-align: center;">修改库区</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <form class="forms-sample">
+                        <div class="form-group row">
+                            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">库区名称</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="rName2" placeholder="库区名称">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">所属仓库</label>
+                            <div class="col-sm-9">
+
+                                <!--<select id="wid" placeholder="所属仓库" class="form-control"></select>-->
+                                <select id="Select2" placeholder="所属仓库" class="form-control">
+                                    <option value="0">===请选择===</option>
+                                    <option value="1">山东1号</option>
+                                    <option value="2">河南1号</option>
+                                    <option value="3">山西1号</option>
+                                    <option value="4">上海1号</option>
+                                    <option value="5">山1号</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">备注</label>
+                            <div class="col-sm-9">
+
+                                <textarea id="remark2" rows="2" cols="20" class="form-control" placeholder="备注"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary mr-2" onclick="Upt()">添加</button>
+                        <button class="btn btn-light">关闭</button>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
 
     <!-- container-scroller -->
     <!-- plugins:js -->
@@ -388,17 +434,11 @@
 
     function Show(page) {
 
-        var obj = {};
-        obj.currentPage = page;
-        obj.pageSize = pageSize;
-        //obj.warehouseId = $("#Select1").val();
-        //obj.reservoirAreaName = $("#name").val();
-
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/ShowReservoirarea/',
+            url: 'http://localhost:63209/api/Reservoirarea/ShowReservoirarea',
             type: 'get',
             dataType: 'json',
-            data: JSON.stringify(obj),
+            data: { wid: $("#Select9").val(), name: $("#names").val(), currentPage: page },
             success: function (d) {
                 $("#TotalCount").text(d.totalCount)
                 $("#TotalPage").text(d.totalPage)
@@ -413,7 +453,7 @@
 
                     var line = '<tr>'
                         + '<td><input class="ckEmp" type="checkbox" value="' + this.reservoirAreaId + '" /></td>'
-                        + '<td><button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
+                        + '<td><button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal2" onclick="GetId(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
                         + '<td>' + this.reservoirAreaId + '</td>'
                         + '<td>' + this.reservoirAreaName + '</td>'
                         + '<td>' + this.warehouseName + '</td>'
@@ -429,6 +469,16 @@
 
         })
     }
+    //存值
+    //function Setcookie(username, value) {
+
+    //    //设置名称为name,值为value的Cookie
+    //    var expdate = new Date();   //初始化时间
+    //    expdate.setTime(expdate.getTime() + 30 * 60 * 1000);   //时间
+    //    document.cookie = username + "=" + value + ";expires=" + expdate.toGMTString() + ";path=/";
+
+    //    //即document.cookie= name+"="+value+";path=/";   时间可以不要，但路径(path)必须要填写，因为JS的默认路径是当前页，如果不填，此cookie只在当前页面生效！~
+    //}
     //删除库区
     function del(id) {
         if (confirm("确认删除吗？")) {
@@ -492,6 +542,7 @@
             })
         }
     }
+    //绑定下拉方法
     //function BandSelWarehouse() {
     //    $.ajax({
     //        url: 'http://localhost:63209/api/Reservoirarea/BandSelWarehouse',
@@ -510,6 +561,86 @@
     //}
 
 
+    //添加
+    function Adds() {
+        if ($("#rName").val() == "") {
+            alert('请输入库区名称！');
+            return;
+        }
+        if ($("#Select1").val() == 0) {
+            alert('请选择所属仓库！');
+            return;
+        }
+        if ($("#remark").val() == "") {
+            alert('请输入备注！');
+            return;
+        }
+        var obj = {};
+        obj.ReservoirAreaName = $("#rName").val();
+        obj.WarehouseId = parseInt($("#Select1").val());
+        obj.Remark = $("#remark").val();
+        $.ajax({
+            url: 'http://localhost:63209/api/Reservoirarea/PostReservoirarea/',
+            type: 'Post',
+            data: JSON.stringify(obj),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (d) {
+                if (d > 0) {
+                    alert('添加成功');
+                    $("#rName").val("");
+                    $("#Select1").val("");
+                    $("#remark").val("");
+                    show(1);
+                }
+            }
+        })
+    }
+    var ids = 0;
+    function GetId(id) {
+        ids = id;
+        Find();
+    }
+
+    //反填
+    function Find() {
+        $.ajax({
+            url: 'http://localhost:63209/api/Reservoirarea/Find/' + ids,
+            type: 'get',
+            contentType: "application/json",
+            dataType: 'json',
+            crossDomain: true,
+            success: function (d) {
+                $("#rName2").val(d.ReservoirAreaName);
+                $("#Select2").val(d.WarehouseId);
+                $("#remark2").val(d.Remark);
+            }
+        })
+    }
+    //修改
+    function Upt() {
+        var obj = {};
+        obj.ReservoirAreaName = $("#rName2").val();
+        obj.WarehouseId = parseInt($("#Select2").val());
+        obj.Remark = $("#remark2").val();
+        obj.ReservoirAreaId = ids;
+        $.ajax({
+            url: 'http://localhost:63209/api/Reservoirarea/PutReservoirarea',
+            type: 'Put',
+            data: JSON.stringify(obj),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (d) {
+                if (d > 0) {
+                    alert('修改成功');
+                    $("#rName2").val("");
+                    $("#Select2").val("");
+                    $("#remark2").val("");
+                    show(1);
+                }
+            }
+        })
+    }
 </script>
 
 
