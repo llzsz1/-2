@@ -391,7 +391,7 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-primary mr-2" onclick="Upt()">添加</button>
+                        <button type="button" class="btn btn-primary mr-2" onclick="Upt()">修改</button>
                         <button class="btn btn-light">关闭</button>
                     </form>
                 </div>
@@ -453,7 +453,7 @@
                     
                     var line = '<tr>'
                         + '<td><input class="ckEmp" type="checkbox" value="' + this.reservoirAreaId + '" /></td>'
-                        + '<td><button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal2" onclick="GetId(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
+                        + '<td><button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal2" onclick="Find(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
                         + '<td>' + this.reservoirAreaId + '</td>'
                         + '<td>' + this.reservoirAreaName + '</td>'
                         + '<td>' + this.warehouseName + '</td>'
@@ -490,7 +490,7 @@
                 contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
-                        Show();
+                        Show(1);
                     }
                     else {
                         alert('操作失败！');
@@ -528,12 +528,12 @@
                 url: "http://localhost:63209/api/Reservoirarea/DeleteReservoirarea/" + ids,
                 type: 'delete',
                 dataType: 'json',
-                data: JSON.stringify({ ReservoirAreaId: id }),
+                data: JSON.stringify({ ReservoirAreaId: ids }),
                 contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
                         alert("成功删除了" + d + "条数据！");
-                        show();
+                        Show(1);
                     }
                     else {
                         alert("删除失败");
@@ -591,29 +591,30 @@
                     $("#rName").val("");
                     $("#Select1").val("");
                     $("#remark").val("");
-                    show(1);
+                    Show(1);
                 }
             }
         })
     }
     var ids = 0;
-    function GetId(id) {
-        ids = id;
-        Find();
-    }
+    //function GetId(id) {
+    //    ids = id;
+    //    //Find();
+    //}
 
     //反填
-    function Find() {
+    function Find(id) {
+        ids = id;
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/Find/' + ids,
+            url: 'http://localhost:63209/api/Reservoirarea/Find?id=' + id,
             type: 'get',
-            contentType: "application/json",
+            //contentType: "application/json",
             dataType: 'json',
-            crossDomain: true,
             success: function (d) {
-                $("#rName2").val(d.ReservoirAreaName);
-                $("#Select2").val(d.WarehouseId);
-                $("#remark2").val(d.Remark);
+                $("#rName2").val(d.reservoirAreaName);
+                $("#Select2").val(d.warehouseId);
+                $("#remark2").val(d.remark);
+
             }
         })
     }
@@ -636,7 +637,7 @@
                     $("#rName2").val("");
                     $("#Select2").val("");
                     $("#remark2").val("");
-                    show(1);
+                    Show(1);
                 }
             }
         })
