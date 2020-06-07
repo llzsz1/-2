@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {}
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
         "projectName": "WMS_DAL",
-        "projectPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
-        "packagesPath": "C:\\Users\\o\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
-                "projectPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
               }
             }
           }
@@ -62,36 +62,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
         "projectName": "WMS_Entity",
-        "projectPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
-        "packagesPath": "C:\\Users\\o\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -125,36 +119,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {
+    "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+        "projectUniqueName": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
         "projectName": "WMS_MVC",
-        "projectPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
-        "packagesPath": "C:\\Users\\o\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\obj\\",
+        "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\WMS_MVC.csproj",
+        "packagesPath": "C:\\Users\\张凯\\.nuget\\packages\\",
+        "outputPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "D:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\o\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\张凯\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -168,11 +156,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
-                "projectPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_DAL\\WMS_DAL.csproj"
               },
-              "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
-                "projectPath": "C:\\Users\\o\\Desktop\\实训二项目\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
+              "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj": {
+                "projectPath": "D:\\Four\\WMS_MVC\\WMS_MVC\\WMS_Entity\\WMS_Entity.csproj"
               }
             }
           }
@@ -209,12 +197,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -223,7 +205,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="template\**" />
+    <Content Remove="template\**" />
+    <EmbeddedResource Remove="template\**" />
+    <None Remove="template\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\template\pages\Carrier\.DS_Store" />
     <Content Remove="wwwroot\template\pages\Carrier\Carrier.html" />
     <Content Remove="wwwroot\template\pages\Carrier\Customer.html" />

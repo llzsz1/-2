@@ -377,3 +377,6 @@ L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcor
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockindetails\Upt.cshtml.g.cs
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockins\Add.cshtml.g.cs
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Stockins\Show.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Delivery\Show.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Inventorymove\Show.cshtml.g.cs
+D:\Four\WMS_MVC\WMS_MVC\WMS_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Inventoryrecord\Show.cshtml.g.cs
