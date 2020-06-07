@@ -203,8 +203,8 @@
                         </a>
                         <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/ResrvoirAreaShow.html">仓库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">仓库管理</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/ResrvoirAreaShow.html">库区管理</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/StoragerackPage.html">货架管理</a></li>
                             </ul>
                         </div>
@@ -218,24 +218,12 @@
                         <tr>
                             <td>
 
-                                <button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal">新增库区</button>
+                                <button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal">新增仓库</button>
                                 <input id="Button1" type="button" value="批量删除" class="btn btn-danger" onclick="delAll()" />
                             </td>
                             <td></td>
-                            <td>
-                                所属仓库：
-                                <!--<select id="wid"></select>-->
-                                <select id="Select9">
-                                    <option value="0">===请选择===</option>
-                                    <option value="1">山东1号</option>
-                                    <option value="2">河南1号</option>
-                                    <option value="3">山西1号</option>
-                                    <option value="4">上海1号</option>
-                                    <option value="5">山1号</option>
-
-                                </select>
-                            </td>
-                            <td>库区名称：<input id="names" type="text" /></td>
+                            
+                            <td>仓库名称：<input id="names" type="text" /></td>
 
 
                             <td><input id="Button1" type="button" value="查询" onclick="Show(1)" class="btn btn-success" /></td>
@@ -248,9 +236,8 @@
                             <tr>
                                 <th><input class="top" type="checkbox" onclick="allSelect()" />全选/反选</th>
                                 <th style="text-align: center;">操作</th>
-                                <th style="text-align: center;">库区编号</th>
-                                <th style="text-align: center;">库区名称</th>
-                                <th style="text-align: center;">所属仓库</th>
+                                <th style="text-align: center;">仓库编号</th>
+                                <th style="text-align: center;">仓库名称</th>
                                 <th style="text-align: center;">备注</th>
                                 <th style="text-align: center;">创建者</th>
                                 <th style="text-align: center;">创建时间</th>
@@ -296,7 +283,7 @@
 
                 <!-- 模态框头部 -->
                 <div class="modal-header">
-                    <h4 class="modal-title" style="text-align: center;">添加新库区</h4>
+                    <h4 class="modal-title" style="text-align: center;">添加新仓库</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -304,25 +291,9 @@
                 <div class="modal-body">
                     <form class="forms-sample">
                         <div class="form-group row">
-                            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">库区名称</label>
+                            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">仓库名称</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="rName" placeholder="库区名称">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">所属仓库</label>
-                            <div class="col-sm-9">
-
-                                <!--<select id="wid" placeholder="所属仓库" class="form-control"></select>-->
-                                <select id="Select1" placeholder="所属仓库" class="form-control">
-                                    <option value="0">===请选择===</option>
-                                    <option value="1">山东1号</option>
-                                    <option value="2">河南1号</option>
-                                    <option value="3">山西1号</option>
-                                    <option value="4">上海1号</option>
-                                    <option value="5">山1号</option>
-
-                                </select>
+                                <input type="text" class="form-control" id="rName" placeholder="仓库名称">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -354,7 +325,7 @@
 
                 <!-- 模态框头部 -->
                 <div class="modal-header">
-                    <h4 class="modal-title" style="text-align: center;">修改库区</h4>
+                    <h4 class="modal-title" style="text-align: center;">修改仓库</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -362,27 +333,12 @@
                 <div class="modal-body">
                     <form class="forms-sample">
                         <div class="form-group row">
-                            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">库区名称</label>
+                            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">仓库名称</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="rName2" placeholder="库区名称">
+                                <input type="text" class="form-control" id="rName2" placeholder="仓库名称">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">所属仓库</label>
-                            <div class="col-sm-9">
-
-                                <!--<select id="wid" placeholder="所属仓库" class="form-control"></select>-->
-                                <select id="Select2" placeholder="所属仓库" class="form-control">
-                                    <option value="0">===请选择===</option>
-                                    <option value="1">山东1号</option>
-                                    <option value="2">河南1号</option>
-                                    <option value="3">山西1号</option>
-                                    <option value="4">上海1号</option>
-                                    <option value="5">山1号</option>
-
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="form-group row">
                             <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">备注</label>
                             <div class="col-sm-9">
@@ -435,10 +391,10 @@
     function Show(page) {
 
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/ShowReservoirarea',
+            url: 'http://localhost:63209/api/Warehouse/ShowWarehouse',
             type: 'get',
             dataType: 'json',
-            data: { wid: $("#Select9").val(), name: $("#names").val(), currentPage: page },
+            data: { name: $("#names").val(), currentPage: page },
             success: function (d) {
                 $("#TotalCount").text(d.totalCount)
                 $("#TotalPage").text(d.totalPage)
@@ -449,13 +405,12 @@
                 currentPage = d.currentPage;
 
                 $("#td").empty();
-                $(d.reservoirareas).each(function () {
+                $(d.warehouses).each(function () {
 
                     var line = '<tr>'
-                        + '<td><input class="ckEmp" type="checkbox" value="' + this.reservoirAreaId + '" /></td>'
-                        + '<td><button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal2" onclick="GetId(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
-                        + '<td>' + this.reservoirAreaId + '</td>'
-                        + '<td>' + this.reservoirAreaName + '</td>'
+                        + '<td><input class="ckEmp" type="checkbox" value="' + this.warehouseId + '" /></td>'
+                        + '<td><button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal2" onclick="Find(' + this.warehouseId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.warehouseId + ')" >删除仓库</button></td>'
+                        + '<td>' + this.warehouseId + '</td>'
                         + '<td>' + this.warehouseName + '</td>'
                         + '<td>' + this.remark + '</td>'
                         + '<td>' + this.userNickname + '</td>'
@@ -483,13 +438,14 @@
     function del(id) {
         if (confirm("确认删除吗？")) {
             $.ajax({
-                url: 'http://localhost:63209/api/Reservoirarea/DeleteReservoirarea/' + id,
+                url: 'http://localhost:63209/api/Warehouse/DeleteWarehouse/'+id,
                 type: 'delete',
                 dataType: 'json',
-                data: JSON.stringify({ ReservoirAreaId: id }),
+                data: JSON.stringify({ storageRackId: id }),
                 contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
+                        alert("操作成功！");
                         Show();
                     }
                     else {
@@ -525,15 +481,15 @@
             }
             //删除
             $.ajax({
-                url: "http://localhost:63209/api/Reservoirarea/DeleteReservoirarea/" + ids,
+                url: "http://localhost:63209/api/Warehouse/DeleteWarehouse/" + ids,
                 type: 'delete',
                 dataType: 'json',
-                data: JSON.stringify({ ReservoirAreaId: id }),
+                data: JSON.stringify({ storageRackId: ids }),
                 contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
                         alert("成功删除了" + d + "条数据！");
-                        show();
+                        Show(1);
                     }
                     else {
                         alert("删除失败");
@@ -564,11 +520,7 @@
     //添加
     function Adds() {
         if ($("#rName").val() == "") {
-            alert('请输入库区名称！');
-            return;
-        }
-        if ($("#Select1").val() == 0) {
-            alert('请选择所属仓库！');
+            alert('请输入仓库名称！');
             return;
         }
         if ($("#remark").val() == "") {
@@ -576,11 +528,10 @@
             return;
         }
         var obj = {};
-        obj.ReservoirAreaName = $("#rName").val();
-        obj.WarehouseId = parseInt($("#Select1").val());
+        obj.WarehouseName = $("#rName").val();
         obj.Remark = $("#remark").val();
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/PostReservoirarea/',
+            url: 'http://localhost:63209/api/Warehouse/PostWarehouse/',
             type: 'Post',
             data: JSON.stringify(obj),
             contentType: "application/json",
@@ -591,41 +542,40 @@
                     $("#rName").val("");
                     $("#Select1").val("");
                     $("#remark").val("");
-                    show(1);
+                    Show(1);
                 }
             }
         })
     }
-    var ids = 0;
-    function GetId(id) {
-        ids = id;
-        Find();
-    }
+    var ids2 = 0;
+    //function GetId(id) {
+    //    ids2 = id;
+    //    Find();
+    //}
 
     //反填
-    function Find() {
+    function Find(id) {
+        ids2 = id;
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/Find/' + ids,
+            url: 'http://localhost:63209/api/Warehouse/Find?id=' + id,
             type: 'get',
             contentType: "application/json",
             dataType: 'json',
             crossDomain: true,
             success: function (d) {
-                $("#rName2").val(d.ReservoirAreaName);
-                $("#Select2").val(d.WarehouseId);
-                $("#remark2").val(d.Remark);
+                $("#rName2").val(d.warehouseName);
+                $("#remark2").val(d.remark);
             }
         })
     }
     //修改
     function Upt() {
         var obj = {};
-        obj.ReservoirAreaName = $("#rName2").val();
-        obj.WarehouseId = parseInt($("#Select2").val());
+        obj.WarehouseName = $("#rName2").val();
         obj.Remark = $("#remark2").val();
-        obj.ReservoirAreaId = ids;
+        obj.WarehouseId = ids2;
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/PutReservoirarea',
+            url: 'http://localhost:63209/api/Warehouse/PutWarehouse',
             type: 'Put',
             data: JSON.stringify(obj),
             contentType: "application/json",
@@ -636,12 +586,12 @@
                     $("#rName2").val("");
                     $("#Select2").val("");
                     $("#remark2").val("");
-                    show(1);
+                    Show(1);
                 }
             }
         })
     }
-</script>
+</script> 
 
 
 
