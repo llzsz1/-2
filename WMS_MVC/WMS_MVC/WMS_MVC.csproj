@@ -1,8 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="template\**" />
+    <Content Remove="template\**" />
+    <EmbeddedResource Remove="template\**" />
+    <None Remove="template\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Remove="wwwroot\template\pages\Carrier\.DS_Store" />
@@ -78,7 +85,6 @@
     <None Include="wwwroot\template\images\favicon.png" />
     <None Include="wwwroot\template\images\logo-mini.svg" />
     <None Include="wwwroot\template\images\logo.svg" />
-    <None Include="wwwroot\template\index.html" />
     <None Include="wwwroot\template\js\.DS_Store" />
     <None Include="wwwroot\template\js\chart.js" />
     <None Include="wwwroot\template\js\Chart.min.js" />

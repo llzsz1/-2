@@ -22,7 +22,6 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="../../../My97DatePicker/WdatePicker.js"></script>
     <link href="wwwroot\lib\bootstrap\dist\css\bootstrap.css" rel="stylesheet" />
     <script src="wwwroot\lib\jquery\dist\jquery.js"></script>
 </head>
@@ -183,35 +182,85 @@
                             <span class="menu-title">首页</span>
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">UI Elements</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
-                            <i class="mdi mdi-circle-outline menu-icon"></i>
-                            <span class="menu-title">仓库管理</span>
+                            <span class="menu-title">用户及部门管理</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basic1">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="ReservoirareaPage.html">仓库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="typography.html">库区管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="typography.html">货架管理</a></li>
-
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/UserShow.html">用户管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/DeptShow.html">部门管理</a></li>
+                            </ul>
                         </div>
                     </li>
+
+                    <!--！！！张俊雷！！！-->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basicc" aria-expanded="false" aria-controls="ui-basicc">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">客户管理</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basicc">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="../Carrier/Carrier.html">承运商管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../Carrier/Supplier.html">供应商管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../Carrier/Customer.html">客户管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--！！！张俊雷！！！！-->
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">库存管理①</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Delivery.html">发货记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventoryrecord.html">库存记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventorymove.html">库存移动</a>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">库存管理②</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic2">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockin.html">入库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockout.html">出库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Inventorys.html">库存查询</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">库存管理③</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic3">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"><a class="nav-link" href="ReservoirareaPage.html">仓库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="WarehousePage.html">库区管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="StoragerackPage.html">货架管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
                 </ul>
-</nav>
+            </nav>
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -226,8 +275,8 @@
                             <td>
                                 所属仓库：
                                 <!--<select id="wid"></select>-->
-                                <select id="Select1">
-                                    <option value="">===请选择===</option>
+                                <select id="Select9">
+                                    <option value="0">===请选择===</option>
                                     <option value="1">山东1号</option>
                                     <option value="2">河南1号</option>
                                     <option value="3">山西1号</option>
@@ -236,8 +285,8 @@
 
                                 </select>
                             </td>
-                            <td>库区名称：<input id="name" type="text" /></td>
-                           
+                            <td>库区名称：<input id="names" type="text" /></td>
+
 
                             <td><input id="Button1" type="button" value="查询" onclick="Show(1)" class="btn btn-success" /></td>
 
@@ -284,7 +333,7 @@
                         </tr>
                     </table>
                 </div>
-                
+
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->
@@ -307,35 +356,35 @@
                         <div class="form-group row">
                             <label for="exampleInputUsername2" class="col-sm-3 col-form-label">库区名称</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="reservoirAreaName" placeholder="库区名称">
+                                <input type="text" class="form-control" id="rName" placeholder="库区名称">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="exampleInputEmail2" class="col-sm-3 col-form-label">所属仓库</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
-                                <select id="wid" placeholder="所属仓库" class="form-control"></select>>
-                                <!--<select id="Select1" placeholder="所属仓库" class="form-control">
-                                    <option value="">===请选择===</option>
+
+                                <!--<select id="wid" placeholder="所属仓库" class="form-control"></select>-->
+                                <select id="Select1" placeholder="所属仓库" class="form-control">
+                                    <option value="0">===请选择===</option>
                                     <option value="1">山东1号</option>
                                     <option value="2">河南1号</option>
                                     <option value="3">山西1号</option>
                                     <option value="4">上海1号</option>
                                     <option value="5">山1号</option>
 
-                                </select>-->
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">备注</label>
                             <div class="col-sm-9">
-                                
+
                                 <textarea id="remark" rows="2" cols="20" class="form-control" placeholder="备注"></textarea>
                             </div>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary mr-2">添加</button>
-                        <button class="btn btn-light">取消</button>
+
+                        <button type="button" class="btn btn-primary mr-2" onclick="Adds()">添加</button>
+                        <button class="btn btn-light">关闭</button>
                     </form>
                 </div>
 
@@ -347,6 +396,63 @@
         </div>
     </div>
 
+
+
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="text-align: center;">修改库区</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <form class="forms-sample">
+                        <div class="form-group row">
+                            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">库区名称</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="rName2" placeholder="库区名称">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputEmail2" class="col-sm-3 col-form-label">所属仓库</label>
+                            <div class="col-sm-9">
+
+                                <!--<select id="wid" placeholder="所属仓库" class="form-control"></select>-->
+                                <select id="Select2" placeholder="所属仓库" class="form-control">
+                                    <option value="0">===请选择===</option>
+                                    <option value="1">山东1号</option>
+                                    <option value="2">河南1号</option>
+                                    <option value="3">山西1号</option>
+                                    <option value="4">上海1号</option>
+                                    <option value="5">山1号</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">备注</label>
+                            <div class="col-sm-9">
+
+                                <textarea id="remark2" rows="2" cols="20" class="form-control" placeholder="备注"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary mr-2" onclick="Upt()">修改</button>
+                        <button class="btn btn-light">关闭</button>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
 
     <!-- container-scroller -->
     <!-- plugins:js -->
@@ -378,17 +484,11 @@
 
     function Show(page) {
 
-        var obj = {};
-        obj.currentPage = page;
-        obj.pageSize = pageSize;
-        obj.warehouseId = $("#Select1").val();
-        obj.reservoirAreaName = $("#name").val();
-
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/ShowReservoirarea/',
+            url: 'http://localhost:63209/api/Reservoirarea/ShowReservoirarea',
             type: 'get',
             dataType: 'json',
-            data: JSON.stringify(obj),
+            data: { wid: $("#Select9").val(), name: $("#names").val(), currentPage: page },
             success: function (d) {
                 $("#TotalCount").text(d.totalCount)
                 $("#TotalPage").text(d.totalPage)
@@ -400,10 +500,10 @@
 
                 $("#td").empty();
                 $(d.reservoirareas).each(function () {
-
+                    
                     var line = '<tr>'
                         + '<td><input class="ckEmp" type="checkbox" value="' + this.reservoirAreaId + '" /></td>'
-                        + '<td><button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
+                        + '<td><button type="button" class="btn btn-inverse-warning btn-fw " data-toggle="modal" data-target="#myModal2" onclick="Find(' + this.reservoirAreaId + ')" >修改库区信息</button>&nbsp;<button type="button" class="btn btn-inverse-info btn-fw" onclick="del(' + this.reservoirAreaId + ')" >删除库区</button></td>'
                         + '<td>' + this.reservoirAreaId + '</td>'
                         + '<td>' + this.reservoirAreaName + '</td>'
                         + '<td>' + this.warehouseName + '</td>'
@@ -419,6 +519,16 @@
 
         })
     }
+    //存值
+    //function Setcookie(username, value) {
+
+    //    //设置名称为name,值为value的Cookie
+    //    var expdate = new Date();   //初始化时间
+    //    expdate.setTime(expdate.getTime() + 30 * 60 * 1000);   //时间
+    //    document.cookie = username + "=" + value + ";expires=" + expdate.toGMTString() + ";path=/";
+
+    //    //即document.cookie= name+"="+value+";path=/";   时间可以不要，但路径(path)必须要填写，因为JS的默认路径是当前页，如果不填，此cookie只在当前页面生效！~
+    //}
     //删除库区
     function del(id) {
         if (confirm("确认删除吗？")) {
@@ -430,7 +540,7 @@
                 contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
-                        Show();
+                        Show(1);
                     }
                     else {
                         alert('操作失败！');
@@ -468,12 +578,12 @@
                 url: "http://localhost:63209/api/Reservoirarea/DeleteReservoirarea/" + ids,
                 type: 'delete',
                 dataType: 'json',
-                data: JSON.stringify({ ReservoirAreaId: id }),
+                data: JSON.stringify({ ReservoirAreaId: ids }),
                 contentType: "application/json",
                 success: function (d) {
                     if (d > 0) {
                         alert("成功删除了" + d + "条数据！");
-                        show();
+                        Show(1);
                     }
                     else {
                         alert("删除失败");
@@ -482,24 +592,106 @@
             })
         }
     }
-    function BandSelWarehouse() {
+    //绑定下拉方法
+    //function BandSelWarehouse() {
+    //    $.ajax({
+    //        url: 'http://localhost:63209/api/Reservoirarea/BandSelWarehouse',
+    //        type: 'get',
+    //        dataType: 'json',
+    //        //contentType: "application/json",
+    //        success: function (d) {
+    //            $("#wid").empty();
+    //            $("#wid").append("<option value=''>--请选择--</option>");
+    //            $(d).each(function () {
+    //                var opt = "<option value=" + this.warehouseId + ">" + this.warehouseName + "</option>";
+    //                $("#wid").append(opt);
+    //            })
+    //        }
+    //    })
+    //}
+
+
+    //添加
+    function Adds() {
+        if ($("#rName").val() == "") {
+            alert('请输入库区名称！');
+            return;
+        }
+        if ($("#Select1").val() == 0) {
+            alert('请选择所属仓库！');
+            return;
+        }
+        if ($("#remark").val() == "") {
+            alert('请输入备注！');
+            return;
+        }
+        var obj = {};
+        obj.ReservoirAreaName = $("#rName").val();
+        obj.WarehouseId = parseInt($("#Select1").val());
+        obj.Remark = $("#remark").val();
         $.ajax({
-            url: 'http://localhost:63209/api/Reservoirarea/BandSelWarehouse',
-            type: 'get',
+            url: 'http://localhost:63209/api/Reservoirarea/PostReservoirarea/',
+            type: 'Post',
+            data: JSON.stringify(obj),
+            contentType: "application/json",
             dataType: 'json',
-            //contentType: "application/json",
             success: function (d) {
-                $("#wid").empty();
-                $("#wid").append("<option value=''>--请选择--</option>");
-                $(d).each(function () {
-                    var opt = "<option value=" + this.warehouseId + ">" + this.warehouseName + "</option>";
-                    $("#wid").append(opt);
-                })
+                if (d > 0) {
+                    alert('添加成功');
+                    $("#rName").val("");
+                    $("#Select1").val("");
+                    $("#remark").val("");
+                    Show(1);
+                }
             }
         })
     }
-    
+    var ids = 0;
+    //function GetId(id) {
+    //    ids = id;
+    //    //Find();
+    //}
 
+    //反填
+    function Find(id) {
+        ids = id;
+        $.ajax({
+            url: 'http://localhost:63209/api/Reservoirarea/Find?id=' + id,
+            type: 'get',
+            //contentType: "application/json",
+            dataType: 'json',
+            success: function (d) {
+                $("#rName2").val(d.reservoirAreaName);
+                $("#Select2").val(d.warehouseId);
+                $("#remark2").val(d.remark);
+
+            }
+        })
+    }
+    //修改
+    function Upt() {
+        var obj = {};
+        obj.ReservoirAreaName = $("#rName2").val();
+        obj.WarehouseId = parseInt($("#Select2").val());
+        obj.Remark = $("#remark2").val();
+        obj.ReservoirAreaId = ids;
+        $.ajax({
+            url: 'http://localhost:63209/api/Reservoirarea/PutReservoirarea',
+            type: 'Put',
+            data: JSON.stringify(obj),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (d) {
+                if (d > 0) {
+                    alert('修改成功');
+                    $("#rName2").val("");
+                    $("#Select2").val("");
+                    $("#remark2").val("");
+                    Show(1);
+                }
+            }
+        })
+    }
 </script>
 
 

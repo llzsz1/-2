@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../images/favicon.png" />
-    <script src="../../../../WMS_MVC\wwwroot\lib\jquery\dist\jquery.js"></script>
-    <script src="../../../../WMS_MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.js"></script>
 
 
-    <!--<script src="C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_MVC\wwwroot\My97DatePicker\WdatePicker.js"></script>-->
+    <link href="../../../lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <script src="../../../js/jquery1.11.1.js"></script>
+    <script src="../../../My97DatePicker/WdatePicker.js"></script>
+
     <script>
         var pageSize = 5;
         var currentPage = 1;
@@ -70,6 +71,7 @@
                             + '<td>' + this.modifiedBy + '</td>'
                             + '<td>' + this.modifiedDate + '</td>'
                             + '</tr>'
+
                         $("#td").append(list);
                     })
                 }
@@ -88,7 +90,7 @@
         }
 
 
-       
+
 
 
         function CaarrierAdd() {
@@ -170,7 +172,7 @@
             }
 
             $.ajax({
-                url: "http://localhost:63209/api/Carrier/"+id,
+                url: "http://localhost:63209/api/Carrier/" + id,
                 type: "get",
                 dataType: "json",
                 contentType: "application/json",
@@ -226,7 +228,7 @@
                 obj.CarrierPerson = $("#CarrierPerson1").val();
                 obj.CarrierLevel = parseInt($("#CarrierLevel1").val());
                 obj.Email = $("#Email1").val();
-                obj.Remark = $("#Remark1").val();          
+                obj.Remark = $("#Remark1").val();
                 obj.modifiedBy = parseInt(1);
                 obj.carrierId = parseInt(id);
 
@@ -263,10 +265,10 @@
             for (var i = 0; i < obj.length; i++) {
                 if (obj[i].checked) {
                     s += obj[i].value;
-                    return s;     
+                    return s;
                 }
-               
-            }    
+
+            }
         }
 
         function CarrierDel() {
@@ -276,7 +278,7 @@
                 alert('请选择一条数据');
                 return;
             }
-           
+
             $.ajax({
                 url: 'http://localhost:63209/api/Carrier/' + id,
                 type: 'delete',
@@ -289,7 +291,7 @@
                         Show(1);
                     }
                 }
-            })     
+            })
         }
 
 
@@ -461,8 +463,8 @@
                         </a>
                         <div class="collapse" id="ui-basic1">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features1/UserShow.html">用户管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features1/DeptShow.html">部门管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/UserShow.html">用户管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/DeptShow.html">部门管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -476,9 +478,9 @@
                         </a>
                         <div class="collapse" id="ui-basicc">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/Carrier/Carrier.html">承运商管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/Carrier/Supplier.html">供应商管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/Carrier/Customer.html">客户管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Carrier.html">承运商管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Supplier.html">供应商管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Customer.html">客户管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -492,39 +494,39 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/Delivery.html">发货记录</a>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/Inventoryrecord.html">库存记录</a>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/ui-features/Inventorymove.html">库存移动</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Delivery.html">发货记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventoryrecord.html">库存记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventorymove.html">库存移动</a>
                             </ul>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
                             <span class="menu-title">库存管理②</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="ui-basic1">
+                        <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="Stockin.html">入库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="Stockout.html">出库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="Inventory.html">库存查询</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockin.html">入库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockout.html">出库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Inventorys.html">库存查询</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic23" aria-expanded="false" aria-controls="ui-basic">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
                             <span class="menu-title">库存管理③</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="ui-basic23">
+                        <div class="collapse" id="ui-basic3">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/ReservoirareaPage.html">仓库管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/template/pages/lllj/StoragerackPage.html">货架管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/ReservoirareaPage.html">仓库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/WarehousePage.html">库区管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/StoragerackPage.html">货架管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -550,7 +552,7 @@
                         <tr>
                             <td>
                                 <input id="Button1" type="button" value="修改✎" class="btn btn-primary" data-toggle="modal" data-target="#PutCarrier" onclick="CarrierFied()" />
-                                <input id="Button1" type="button" value="删除✖" class="btn btn-reddit" onclick="CarrierDel()"/>
+                                <input id="Button1" type="button" value="删除✖" class="btn btn-reddit" onclick="CarrierDel()" />
                                 <input id="Button1" type="button" value="新增✚" class="btn btn-success" data-toggle="modal" data-target="#myModal4" />
                             </td>
                             <td></td>
@@ -672,12 +674,12 @@
     </div>
     <!--添加-->
     <!--反填+修改-->
-    <div class="modal fade" id="PutCarrier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal fade" id="PutCarrier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" id="Close1">
             <div class="modal-content" id="Close2">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">新增承运商</h4>
+                    <h4 class="modal-title" id="myModalLabel">修改承运商</h4>
                 </div>
                 <table class="table table-bordered">
                     <tr>
