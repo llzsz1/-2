@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../images/favicon.png" />
-    <script src="../../../../WMS_MVC\wwwroot\lib\jquery\dist\jquery.js"></script>
-    <script src="../../../../WMS_MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.js"></script>
 
+    <link href="../../../lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <script src="../../../js/jquery1.11.1.js"></script>
+    <script src="../../../My97DatePicker/WdatePicker.js"></script>
 
 
     <script>
@@ -56,7 +57,7 @@
                     $("#td").empty();
                     $(d.suppliers).each(function () {
                         var list = '<tr>'
-                            + '<td>' + '<input id="Checkbox1" type="checkbox" class="xia" value=' + this.supplierId + ' />' + '</td>'
+                            + '<td>' + '<input id="Checkbox1" type="checkbox" class="xia" name="test" value=' + this.supplierId + ' />' + '</td>'
                             + '<td>' + this.supplierId + '</td>'
                             + '<td>' + this.supplierName + '</td>'
                             + '<td>' + this.tel + '</td>'
@@ -74,7 +75,228 @@
                     })
                 }
             })
+            Clear();
         }
+
+        //清空
+        function Clear() {
+            $("#CarrierName").val("");
+            $("#Address").val("");
+            $("#Tel").val("");
+            $("#CarrierPerson").val("");
+            $("#CarrierLevel").val("");
+            $("#Email").val("");
+            $("#Remark").val("");
+        }
+
+
+
+
+
+        function SupplierAdd() {
+            try {
+                if ($("#CarrierName").val() == "") {
+                    alert('请输入承运商名称！');
+                    return;
+                }
+                if ($("#Address").val() == "") {
+                    alert('请输入地址！');
+                    return;
+                }
+                if ($("#Tel").val() == "") {
+                    alert('请输入电话！');
+                    return;
+                }
+                if ($("#CarrierPerson").val() == "") {
+                    alert('请输入联系人！');
+                    return;
+                }
+                if ($("#CarrierLevel").val() == "") {
+                    alert('请输入级别（为 1/2/3）！');
+                    return;
+                }
+                if ($("#Email").val() == "") {
+                    alert('请输入邮箱！');
+                    return;
+                }
+                if ($("#Remark").val() == "") {
+                    alert('请输入备注！');
+                    return;
+                }
+                var obj = {};
+                obj.supplierName = $("#CarrierName").val();
+                obj.address = $("#Address").val();
+                obj.tel = $("#Tel").val();
+                obj.supplierPerson = $("#CarrierPerson").val();
+                obj.supplierLevel = parseInt($("#CarrierLevel").val());
+                obj.email = $("#Email").val();
+                obj.remark = $("#Remark").val();
+                obj.createBy = parseInt(1);
+                obj.modifiedBy = parseInt(1);
+
+
+
+                $.ajax({
+                    url: 'http://localhost:63209/api/Supplier',
+                    type: 'Post',
+                    dataType: 'json',
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json',
+                    success: function (d) {
+                        if (d > 0) {
+                            alert('添加成功');
+                            Show(1);
+                            Clear();
+
+
+                        } else {
+                            alert('添加失败');
+                            Clear();
+
+                        }
+                    }
+                })
+            } catch (e) {
+                alert('添加失败');
+                Clear();
+            }
+        }
+
+        // 反填
+        function SupplierFied() {
+
+            var id = chk();
+
+            if (id == undefined) {
+                alert('请选择一条数据');
+                return;
+                Show(1);
+            }
+
+            $.ajax({
+                url: "http://localhost:63209/api/Supplier/" + id,
+                type: "get",
+                dataType: "json",
+                contentType: "application/json",
+                success: function (d) {
+                    $("#CarrierName1").val(d.supplierName);
+                    $("#Address1").val(d.address);
+                    $("#Tel1").val(d.tel);
+                    $("#CarrierPerson1").val(d.supplierPerson);
+                    $("#CarrierLevel1").val(d.supplierLevel);
+                    $("#Email1").val(d.email);
+                    $("#Remark1").val(d.remark);
+                }
+
+            })
+        }
+
+        //修改
+        function PutSupplier() {
+            var id = chk();
+            try {
+                if ($("#CarrierName1").val() == "") {
+                    alert('请输入承运商名称！');
+                    return;
+                }
+                if ($("#Address1").val() == "") {
+                    alert('请输入地址！');
+                    return;
+                }
+                if ($("#Tel1").val() == "") {
+                    alert('请输入电话！');
+                    return;
+                }
+                if ($("#CarrierPerson1").val() == "") {
+                    alert('请输入联系人！');
+                    return;
+                }
+                if ($("#CarrierLevel1").val() == "") {
+                    alert('请输入级别（为 1/2/3）！');
+                    return;
+                }
+                if ($("#Email1").val() == "") {
+                    alert('请输入邮箱！');
+                    return;
+                }
+                if ($("#Remark1").val() == "") {
+                    alert('请输入备注！');
+                    return;
+                }
+                var obj = {};
+                obj.supplierName = $("#CarrierName1").val();
+                obj.address = $("#Address1").val();
+                obj.tel = $("#Tel1").val();
+                obj.supplierPerson = $("#CarrierPerson1").val();
+                obj.supplierLevel = parseInt($("#CarrierLevel1").val());
+                obj.email = $("#Email1").val();
+                obj.remark = $("#Remark1").val();
+                obj.modifiedBy = parseInt(1);
+                obj.supplierId = parseInt(id)
+
+
+                $.ajax({
+                    url: 'http://localhost:63209/api/Supplier/' + id,
+                    type: 'put',
+                    dataType: 'json',
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json',
+                    success: function (d) {
+                        if (d > 0) {
+                            alert('修改成功');
+                            Show(1);
+                            Clear();
+
+                        } else {
+                            alert('修改失败1');
+                            Clear();
+
+                        }
+                    }
+                })
+            } catch (e) {
+                alert('修改失败');
+                Clear();
+            }
+        }
+
+        function chk() {
+            var obj = document.getElementsByName('test');
+            console.log(obj);
+            var s = '';
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].checked) {
+                    s += obj[i].value;
+                    return s;
+                }
+
+            }
+        }
+
+        function SupplierDel() {
+            var id = chk();
+
+            if (id == undefined) {
+                alert('请选择一条数据');
+                return;
+            }
+
+            $.ajax({
+                url: 'http://localhost:63209/api/Supplier/' + id,
+                type: 'delete',
+                dataType: 'json',
+                contentType: 'application/json',
+                crossDomain: true,
+                success: function (d) {
+                    if (d > 0) {
+                        alert('删除成功')
+                        Show(1);
+                    }
+                }
+            })
+        }
+
+
     </script>
 </head>
 
@@ -84,10 +306,8 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                    <a class="navbar-brand brand-logo" href="../../index.html">
-                        <img src="../../images/logo.svg" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="../../index.html">
-                        <img src="../../images/logo-mini.svg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-sort-variant"></span>
                     </button>
@@ -119,7 +339,8 @@
                                     <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">David Grey
+                                    <h6 class="ellipsis font-weight-normal">
+                                        David Grey
                                     </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         The meeting is cancelled
@@ -131,7 +352,8 @@
                                     <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">Tim Cook
+                                    <h6 class="ellipsis font-weight-normal">
+                                        Tim Cook
                                     </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         New product launch
@@ -143,7 +365,8 @@
                                     <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">Johnson
+                                    <h6 class="ellipsis font-weight-normal">
+                                        Johnson
                                     </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
                                         Upcoming board meeting
@@ -225,7 +448,7 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:../../partials/_sidebar.html -->
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <nav class="sidebar sidebar-offcanvas" id="sidebar2">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/Login/Index">
@@ -242,8 +465,8 @@
                         </a>
                         <div class="collapse" id="ui-basic1">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features1/UserShow.html">用户管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features1/DeptShow.html">部门管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/UserShow.html">用户管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/DeptShow.html">部门管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -273,9 +496,9 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="Delivery.html">发货记录</a>
-                                <li class="nav-item"><a class="nav-link" href="Inventoryrecord.html">库存记录</a>
-                                <li class="nav-item"><a class="nav-link" href="Inventorymove.html">库存移动</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Delivery.html">发货记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventoryrecord.html">库存记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventorymove.html">库存移动</a>
                             </ul>
                         </div>
                     </li>
@@ -288,9 +511,9 @@
                         </a>
                         <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="Stockin.html">入库管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="Stockout.html">出库管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="Inventory.html">库存查询</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockin.html">入库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockout.html">出库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Inventorys.html">库存查询</a></li>
                             </ul>
                         </div>
                     </li>
@@ -303,9 +526,9 @@
                         </a>
                         <div class="collapse" id="ui-basic3">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/ReservoirareaPage.html">仓库管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/StoragerackPage.html">货架管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/ReservoirareaPage.html">仓库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/WarehousePage.html">库区管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/StoragerackPage.html">货架管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -315,7 +538,7 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <table class="table table-bordered table-borderless" style="background-color: azure">
+                    <table class="table table-bordered table-borderless" style="background-color:azure">
                         <tr>
                             <td>创建时间：<input id="time1" type="text" class="text-behance" onclick="WdatePicker()" /></td>
 
@@ -330,9 +553,9 @@
                         </tr>
                         <tr>
                             <td>
-                                <input id="Button1" type="button" value="修改✎" class="btn btn-primary" />
-                                <input id="Button1" type="button" value="删除✖" class="btn btn-reddit" />
-                                <input id="Button1" type="button" value="新增✚" class="btn btn-success" />
+                                <input id="Button1" type="button" value="修改✎" class="btn btn-primary" data-toggle="modal" data-target="#PutSupplier" onclick="SupplierFied()" />
+                                <input id="Button1" type="button" value="删除✖" class="btn btn-reddit" onclick="SupplierDel()" />
+                                <input id="Button1" type="button" value="新增✚" class="btn btn-success" data-toggle="modal" data-target="#myModal4" />
                             </td>
                             <td></td>
                             <td></td>
@@ -342,8 +565,7 @@
                             <td></td>
 
                             <td>供应商名称：<input id="name" type="text" class="text-behance" /></td>
-                            <td>
-                                <input id="Button1" type="button" value="查询" onclick="Show(1)" class="btn btn-success" /></td>
+                            <td><input id="Button1" type="button" value="查询" onclick="Show(1)" class="btn btn-success" /></td>
                         </tr>
                     </table>
                     <table class="table table-bordered table table-borderless">
@@ -366,7 +588,7 @@
                         </thead>
                         <tbody id="td"></tbody>
                     </table>
-                    <table class="table" style="background-color: antiquewhite">
+                    <table class="table" style="background-color:antiquewhite">
                         <tr>
                             <td style="text-align: center; vertical-align: middle; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">总记录数<span id="TotalCount"></span>条</td>
                             <td style="text-align: center; vertical-align: middle; color: black; font-family: STXingkai; font-weight: bolder; font-size: larger">总共<span id="TotalPage"></span>页</td>
@@ -402,6 +624,101 @@
     <script src="../../js/off-canvas.js"></script>
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
+
+    <!--添加-->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" id="Close1">
+            <div class="modal-content" id="Close2">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">新增供应商</h4>
+                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>供应商：</td>
+                        <td><input id="CarrierName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>地址：</td>
+                        <td><input id="Address" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>电话：</td>
+                        <td><input id="Tel" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>联系人：</td>
+                        <td><input id="CarrierPerson" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>级别：</td>
+                        <td><input id="CarrierLevel" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱：</td>
+                        <td><input id="Email" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>备注：</td>
+                        <td><input id="Remark" type="text" /></td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Clear()">关闭✘</button>
+                    <button type="button" class="btn btn-primary" id="rcbtn" onclick="SupplierAdd()">添加✚</button>
+                    <button type="button" class="btn btn-danger" id="rcbtn" onclick="Clear()">清空✘</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加-->
+    <!--反填+修改-->
+    <div class="modal fade" id="PutSupplier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" id="Close1">
+            <div class="modal-content" id="Close2">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">修改供应商</h4>
+                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>供应商：</td>
+                        <td><input id="CarrierName1" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>地址：</td>
+                        <td><input id="Address1" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>电话：</td>
+                        <td><input id="Tel1" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>联系人：</td>
+                        <td><input id="CarrierPerson1" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>级别：</td>
+                        <td><input id="CarrierLevel1" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱：</td>
+                        <td><input id="Email1" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>备注：</td>
+                        <td><input id="Remark1" type="text" /></td>
+                    </tr>
+                </table>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Clear()">关闭✘</button>
+                    <button type="button" class="btn btn-primary" id="rcbtn" onclick="PutSupplier()">修改✎</button>
+                    <button type="button" class="btn btn-danger" id="rcbtn" onclick="Clear()">清空✘</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--反填+修改-->
 </body>
 
 </html>

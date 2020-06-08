@@ -41,3 +41,4 @@ C:\Users\o\Desktop\实训二项目\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\net
 C:\Users\o\Desktop\实训二项目\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.dll
 C:\Users\o\Desktop\实训二项目\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.pdb
 L:\实训二\仓库管理系统项目---4组mvc\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.csprojAssemblyReference.cache
+C:\Users\o\Desktop\实训二项目\Four\WMS_MVC\WMS_MVC\WMS_Entity\obj\Debug\netcoreapp3.1\WMS_Entity.csprojAssemblyReference.cache

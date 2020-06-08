@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>承运商管理</title>
+    <title>客户管理</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../images/favicon.png" />
-    <script src="../../../../WMS_MVC\wwwroot\lib\jquery\dist\jquery.js"></script>
-    <script src="../../../../WMS_MVC\wwwroot\lib\bootstrap\dist\js\bootstrap.js"></script>
 
 
-    <!--<script src="C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_MVC\wwwroot\My97DatePicker\WdatePicker.js"></script>-->
+    <link href="../../../lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <script src="../../../js/jquery1.11.1.js"></script>
+    <script src="../../../My97DatePicker/WdatePicker.js"></script>
+
+
     <script>
         var pageSize = 5;
         var currentPage = 1;
@@ -38,7 +40,7 @@
 
 
             $.ajax({
-                url: 'http://localhost:63209/api/Carrier',
+                url: 'http://localhost:63209/api/Customer',
                 type: 'get',
                 dataType: 'json',
                 contentType: 'application/json',
@@ -54,11 +56,11 @@
                     currentPage = d.currentPage;
 
                     $("#td").empty();
-                    $(d.carriers).each(function () {
+                    $(d.customers).each(function () {
                         var list = '<tr>'
-                            + '<td>' + '<input id="Checkbox1" name="test" type="checkbox" class="xia" value=' + this.carrierId + ' />' + '</td>'
-                            + '<td>' + this.carrierId + '</td>'
-                            + '<td>' + this.carrierName + '</td>'
+                            + '<td>' + '<input id="Checkbox1" type="checkbox" class="xia" name="test" value=' + this.customerId + ' />' + '</td>'
+                            + '<td>' + this.customerId + '</td>'
+                            + '<td>' + this.customerName + '</td>'
                             + '<td>' + this.tel + '</td>'
                             + '<td>' + this.email + '</td>'
                             + '<td>' + this.carrierPerson + '</td>'
@@ -77,6 +79,7 @@
             Clear();
         }
 
+        //清空
         function Clear() {
             $("#CarrierName").val("");
             $("#Address").val("");
@@ -87,11 +90,7 @@
             $("#Remark").val("");
         }
 
-
-
-
-
-        function CaarrierAdd() {
+        function CustomerAdd() {
             try {
                 if ($("#CarrierName").val() == "") {
                     alert('请输入承运商名称！');
@@ -122,18 +121,18 @@
                     return;
                 }
                 var obj = {};
-                obj.CarrierName = $("#CarrierName").val();
-                obj.Address = $("#Address").val();
-                obj.Tel = $("#Tel").val();
-                obj.CarrierPerson = $("#CarrierPerson").val();
-                obj.CarrierLevel = parseInt($("#CarrierLevel").val());
-                obj.Email = $("#Email").val();
-                obj.Remark = $("#Remark").val();
-                obj.CreateBy = parseInt(1);
+                obj.customerName = $("#CarrierName").val();
+                obj.address = $("#Address").val();
+                obj.tel = $("#Tel").val();
+                obj.carrierPerson = $("#CarrierPerson").val();
+                obj.carrierLevel = parseInt($("#CarrierLevel").val());
+                obj.email = $("#Email").val();
+                obj.remark = $("#Remark").val();
+                obj.modifiedBy = parseInt(1);
 
 
                 $.ajax({
-                    url: 'http://localhost:63209/api/Carrier',
+                    url: 'http://localhost:63209/api/Customer',
                     type: 'Post',
                     dataType: 'json',
                     data: JSON.stringify(obj),
@@ -159,7 +158,7 @@
         }
 
         // 反填
-        function CarrierFied() {
+        function CustomerFied() {
 
             var id = chk();
 
@@ -170,12 +169,12 @@
             }
 
             $.ajax({
-                url: "http://localhost:63209/api/Carrier/" + id,
+                url: "http://localhost:63209/api/Customer/" + id,
                 type: "get",
                 dataType: "json",
                 contentType: "application/json",
                 success: function (d) {
-                    $("#CarrierName1").val(d.carrierName);
+                    $("#CarrierName1").val(d.customerName);
                     $("#Address1").val(d.address);
                     $("#Tel1").val(d.tel);
                     $("#CarrierPerson1").val(d.carrierPerson);
@@ -188,7 +187,7 @@
         }
 
         //修改
-        function PutCarrier() {
+        function PutCustomer() {
             var id = chk();
             try {
                 if ($("#CarrierName1").val() == "") {
@@ -220,19 +219,19 @@
                     return;
                 }
                 var obj = {};
-                obj.CarrierName = $("#CarrierName1").val();
-                obj.Address = $("#Address1").val();
-                obj.Tel = $("#Tel1").val();
-                obj.CarrierPerson = $("#CarrierPerson1").val();
-                obj.CarrierLevel = parseInt($("#CarrierLevel1").val());
-                obj.Email = $("#Email1").val();
-                obj.Remark = $("#Remark1").val();
+                obj.customerName = $("#CarrierName1").val();
+                obj.address = $("#Address1").val();
+                obj.tel = $("#Tel1").val();
+                obj.carrierPerson = $("#CarrierPerson1").val();
+                obj.carrierLevel = parseInt($("#CarrierLevel1").val());
+                obj.email = $("#Email1").val();
+                obj.remark = $("#Remark1").val();
                 obj.modifiedBy = parseInt(1);
-                obj.carrierId = parseInt(id);
+                obj.customerId = parseInt(id);
 
 
                 $.ajax({
-                    url: 'http://localhost:63209/api/Carrier/' + id,
+                    url: 'http://localhost:63209/api/Customer/' + id,
                     type: 'put',
                     dataType: 'json',
                     data: JSON.stringify(obj),
@@ -269,7 +268,7 @@
             }
         }
 
-        function CarrierDel() {
+        function CustomerDel() {
             var id = chk();
 
             if (id == undefined) {
@@ -278,7 +277,7 @@
             }
 
             $.ajax({
-                url: 'http://localhost:63209/api/Carrier/' + id,
+                url: 'http://localhost:63209/api/Customer/' + id,
                 type: 'delete',
                 dataType: 'json',
                 contentType: 'application/json',
@@ -291,7 +290,6 @@
                 }
             })
         }
-
 
     </script>
 </head>
@@ -461,8 +459,8 @@
                         </a>
                         <div class="collapse" id="ui-basic1">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features1/UserShow.html">用户管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features1/DeptShow.html">部门管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/UserShow.html">用户管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features1/DeptShow.html">部门管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -492,9 +490,9 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Delivery.html">发货记录</a>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Inventoryrecord.html">库存记录</a>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/ui-features/Inventorymove.html">库存移动</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Delivery.html">发货记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventoryrecord.html">库存记录</a>
+                                <li class="nav-item"><a class="nav-link" href="../ui-features/Inventorymove.html">库存移动</a>
                             </ul>
                         </div>
                     </li>
@@ -507,9 +505,9 @@
                         </a>
                         <div class="collapse" id="ui-basic2">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="Stockin.html">入库管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="Stockout.html">出库管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="Inventory.html">库存查询</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockin.html">入库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Stockout.html">出库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../222z/Inventorys.html">库存查询</a></li>
                             </ul>
                         </div>
                     </li>
@@ -522,9 +520,9 @@
                         </a>
                         <div class="collapse" id="ui-basic3">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/ReservoirareaPage.html">仓库管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/WarehousePage.html">库区管理</a></li>
-                                <li class="nav-item"><a class="nav-link" href="~/template/pages/lllj/StoragerackPage.html">货架管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/ReservoirareaPage.html">仓库管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/WarehousePage.html">库区管理</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../lllj/StoragerackPage.html">货架管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -549,9 +547,9 @@
                         </tr>
                         <tr>
                             <td>
-                                <input id="Button1" type="button" value="修改✎" class="btn btn-primary" data-toggle="modal" data-target="#PutCarrier" onclick="CarrierFied()" />
-                                <input id="Button1" type="button" value="删除✖" class="btn btn-reddit" onclick="CarrierDel()"/>
-                                <input id="Button1" type="button" value="新增✚" class="btn btn-success" data-toggle="modal" data-target="#myModal4" />
+                                <input id="Button1" type="button" value="修改✎" class="btn btn-primary" data-toggle="modal" data-target="#PutCustomer" onclick="CustomerFied()" />
+                                <input id="Button1" type="button" value="删除✖" class="btn btn-reddit" onclick="CustomerDel()" />
+                                <input id="Button1" type="button" value="新增✚" class="btn btn-success" data-toggle="modal" data-target="#myModal41" />
                             </td>
                             <td></td>
                             <td></td>
@@ -560,7 +558,7 @@
                             <td></td>
                             <td></td>
 
-                            <td>承运商名称：<input id="name" type="text" class="text-behance" /></td>
+                            <td>客户名称：<input id="name" type="text" class="text-behance" /></td>
                             <td><input id="Button1" type="button" value="查询" onclick="Show(1)" class="btn btn-success" /></td>
                         </tr>
                     </table>
@@ -568,8 +566,8 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>承运商编号</th>
-                                <th>承运商名称</th>
+                                <th>客户编号</th>
+                                <th>客户名称</th>
                                 <th>电话</th>
                                 <th>邮箱</th>
                                 <th>联系人</th>
@@ -620,21 +618,17 @@
     <script src="../../js/off-canvas.js"></script>
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
-
-
-    <script src="C:\Users\o\Desktop\实训二项目\第四组项目MVC\WMS_MVC\WMS_MVC\wwwroot\My97DatePicker\WdatePicker.js"></script>
-
     <!--添加-->
-    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal41" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" id="Close1">
             <div class="modal-content" id="Close2">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">新增承运商</h4>
+                    <h4 class="modal-title" id="myModalLabel">新增客户</h4>
                 </div>
                 <table class="table table-bordered">
                     <tr>
-                        <td>承运商：</td>
+                        <td>客户：</td>
                         <td><input id="CarrierName" type="text" /></td>
                     </tr>
                     <tr>
@@ -664,7 +658,7 @@
                 </table>
                 <div class="form-group">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Clear()">关闭✘</button>
-                    <button type="button" class="btn btn-primary" id="rcbtn" onclick="CaarrierAdd()">添加✚</button>
+                    <button type="button" class="btn btn-primary" id="rcbtn" onclick="CustomerAdd()">添加✚</button>
                     <button type="button" class="btn btn-danger" id="rcbtn" onclick="Clear()">清空✘</button>
                 </div>
             </div>
@@ -672,16 +666,16 @@
     </div>
     <!--添加-->
     <!--反填+修改-->
-    <div class="modal fade" id="PutCarrier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal fade" id="PutCustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" id="Close1">
             <div class="modal-content" id="Close2">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">新增承运商</h4>
+                    <h4 class="modal-title" id="myModalLabel">修改客户</h4>
                 </div>
                 <table class="table table-bordered">
                     <tr>
-                        <td>承运商：</td>
+                        <td>客户名称：</td>
                         <td><input id="CarrierName1" type="text" /></td>
                     </tr>
                     <tr>
@@ -711,13 +705,14 @@
                 </table>
                 <div class="form-group">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="Clear()">关闭✘</button>
-                    <button type="button" class="btn btn-primary" id="rcbtn" onclick="PutCarrier()">修改✎</button>
+                    <button type="button" class="btn btn-primary" id="rcbtn" onclick="PutCustomer()">修改✎</button>
                     <button type="button" class="btn btn-danger" id="rcbtn" onclick="Clear()">清空✘</button>
                 </div>
             </div>
         </div>
     </div>
     <!--反填+修改-->
+
 </body>
 
 </html>
